@@ -1815,6 +1815,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1591593283}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1869123603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7472121927942981607, guid: caaddea118c2e2b41aeed0a937eee48c,
+    type: 3}
+  m_PrefabInstance: {fileID: 9119957187388825350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1869123604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869123603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84671fcaebed33045a1bc51448266203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1877801637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1986,6 +2004,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Can v1
       objectReference: {fileID: 0}
+    - target: {fileID: 9022130298602360046, guid: ecb664c6f61662543994d2692ea8ebda,
+        type: 3}
+      propertyPath: m_TagString
+      value: grabbable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecb664c6f61662543994d2692ea8ebda, type: 3}
 --- !u!1 &1994563010
@@ -2098,6 +2121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TinCan v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748110077588802252, guid: 194dd3ca9c857dc429c4b30d0f3f927a,
+        type: 3}
+      propertyPath: m_TagString
+      value: grabbable
       objectReference: {fileID: 0}
     - target: {fileID: 3272128061426520182, guid: 194dd3ca9c857dc429c4b30d0f3f927a,
         type: 3}
