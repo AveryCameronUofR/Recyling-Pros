@@ -1702,6 +1702,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueItemBin
       objectReference: {fileID: 0}
+    - target: {fileID: 7237240986447903630, guid: d494b1a66cf107f43a96251e3adf19d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362667647727818959, guid: d494b1a66cf107f43a96251e3adf19d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8919902713212696320, guid: d494b1a66cf107f43a96251e3adf19d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962108931219593487, guid: d494b1a66cf107f43a96251e3adf19d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032054342236209768, guid: d494b1a66cf107f43a96251e3adf19d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9032054342236209768, guid: d494b1a66cf107f43a96251e3adf19d4,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2051,7 +2076,7 @@ PrefabInstance:
     - target: {fileID: 8538502840065971796, guid: ecb664c6f61662543994d2692ea8ebda,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.127
+      value: 2.307
       objectReference: {fileID: 0}
     - target: {fileID: 8538502840065971796, guid: ecb664c6f61662543994d2692ea8ebda,
         type: 3}
