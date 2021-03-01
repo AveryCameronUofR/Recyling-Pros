@@ -1,19 +1,16 @@
 {
-    "name": "SteamVR_Actions",
-    "references": [
-        "SteamVR"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [
-        "Android",
-        "WindowsStandalone32",
-        "WindowsStandalone64"
-    ],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "SteamVR_Actions",
+  "references": [
+    "SteamVR"
+  ],
+  "optionalUnityReferences": [],
+  "includePlatforms": [],
+  "excludePlatforms": [
+    "Android"
+  ],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": []
 }
