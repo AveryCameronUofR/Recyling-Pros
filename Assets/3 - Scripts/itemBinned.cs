@@ -6,9 +6,9 @@ public class itemBinned : MonoBehaviour
 {
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "grabbable")
+        if (col.gameObject.CompareTag("grabbable"))
         {
-            GameManager.gm.itemBinned();
+            GameManager.gm.ItemBinned();
             Destroy(col.gameObject);
         }
     }

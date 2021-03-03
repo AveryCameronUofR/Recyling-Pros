@@ -9,11 +9,6 @@ public class raycastPointer : MonoBehaviour
     public Material material;
 
     private LineRenderer lineRenderer;
-    private Transform controller;
-    private Vector3 beginPos;
-    private Vector3 endPos;
-
-    private Transform pointerFinger = null;
 
     void Start() 
     {
@@ -24,7 +19,6 @@ public class raycastPointer : MonoBehaviour
         lineRenderer.material = new Material(material);
         lineRenderer.positionCount = 2;
 
-        controller = gameObject.GetComponent<Transform>();
         //pointerFinger = gameObject.transform.Find("ControllerButtonHints");
         //Debug.Log(pointerFinger.ToString());
     }
@@ -69,7 +63,7 @@ public class raycastPointer : MonoBehaviour
         }    
     }
 
-    public Transform getMyFinger(Transform hand)
+    public Transform GetMyFinger(Transform hand)
     {
         return hand.Find("vr_glove_right_model_slim(Clone)/slim_r/Root/finger_index_r_aux");
     }

@@ -7,16 +7,11 @@ using Valve.VR.InteractionSystem;
 
 public class controllerInput : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        bool state = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
+        bool rTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
 
-        if (state == true)
+        if (rTriggerState == true)
         {
             if (EventSystem.current.currentSelectedGameObject != null)
             {

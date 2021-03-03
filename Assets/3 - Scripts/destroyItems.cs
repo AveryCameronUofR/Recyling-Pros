@@ -6,9 +6,9 @@ public class destroyItems : MonoBehaviour
 {
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "grabbable")
+        if (col.gameObject.CompareTag("grabbable"))
         {
-            GameManager.gm.itemMissed();
+            GameManager.gm.ItemMissed();
             Destroy(col.gameObject);
         }
     }
