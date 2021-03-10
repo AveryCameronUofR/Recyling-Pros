@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 7237240986447903630}
   - component: {fileID: 763900399}
   m_Layer: 0
-  m_Name: BlueItemBin 1
-  m_TagString: Untagged
+  m_Name: RedItemBin
+  m_TagString: badItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

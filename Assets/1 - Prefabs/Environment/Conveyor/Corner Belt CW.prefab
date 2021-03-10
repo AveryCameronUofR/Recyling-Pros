@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9149914734196608677}
   m_Layer: 0
   m_Name: Corner Belt CW
-  m_TagString: Untagged
+  m_TagString: corner_conv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flat 2r CW
       objectReference: {fileID: 0}
+    - target: {fileID: 1203945539818112, guid: 6cfd186afe1bb1844851ad5cb8fb9f95, type: 3}
+      propertyPath: m_TagString
+      value: corner_conv
+      objectReference: {fileID: 0}
     - target: {fileID: 4869986071255838, guid: 6cfd186afe1bb1844851ad5cb8fb9f95, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -159,6 +163,12 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64594855650818280, guid: 6cfd186afe1bb1844851ad5cb8fb9f95,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e50a8a3188b9c8c4d8e5da81888462cb,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cfd186afe1bb1844851ad5cb8fb9f95, type: 3}
 --- !u!4 &2455671807715816583 stripped

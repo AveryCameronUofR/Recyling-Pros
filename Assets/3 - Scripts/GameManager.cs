@@ -9,22 +9,28 @@ public class GameManager : MonoBehaviour
 {
     #region Members
     public static GameManager gm;
+    public int startingLives;
     public Text scoreDisplay;
     public Text waveNumberDisplay;
     public Text waveDescDisplay;
     public Text timerDisplayHeading;
     public Text timerDisplayTime;
+    public Text gameoverDisplay;
+    public Text livesDisplay;
+    public GameObject conveyor;
     public float timeBetweenWaves;
 
     public WaveMap currWaveMap { get; private set; }
     public GameStates currState { get; private set; }
 
     private int score = 0;
+    private int playerLives;
     private readonly string waveMapDir = System.IO.Directory.GetCurrentDirectory() + "/Assets/5 - JSON_WaveScripts/";
     private List<WaveMap> waveMaps;
     private int waveIndex = 0;
     private float primeTime = 0.0f;
-    
+    private conveyorController conveyorCntrl;
+    private string heart_symbol = "\u2764";
 
     public enum GameStates { Idle, Priming, Playing, GameOver };
     #endregion
@@ -48,8 +54,14 @@ public class GameManager : MonoBehaviour
 
         scoreDisplay.text = "Score: " + score;
 
+        playerLives = startingLives;
+        livesDisplay.text = CreateLivesString();
+
+        conveyorCntrl = conveyor.GetComponent<conveyorController>();
+
         waveMaps = LoadWaves();
         currWaveMap = waveMaps[waveIndex];
+        conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
 
         waveDescDisplay.gameObject.SetActive(false);
         timerDisplayHeading.gameObject.SetActive(false);
@@ -105,10 +117,20 @@ public class GameManager : MonoBehaviour
                     waveNumberDisplay.text = "Wave: " + currWaveMap.wave_id;
                     waveDescDisplay.text = currWaveMap.wave_name;
                 }
-                    
+                
+                if (playerLives <= 0)
+                {
+                    currState = GameStates.GameOver;
+                }
+
                 break;
             case GameStates.GameOver:
-                //Return to menu?
+                waveDescDisplay.gameObject.SetActive(false);
+                timerDisplayHeading.gameObject.SetActive(false);
+                timerDisplayTime.gameObject.SetActive(false);
+
+                gameoverDisplay.gameObject.SetActive(true);
+
                 break;
         }
     }
@@ -129,26 +151,50 @@ public class GameManager : MonoBehaviour
         return waveMaps;
     }
 
+    private string CreateLivesString()
+    {
+        string livesStr = "";
+
+        if (playerLives <= 0)
+            return livesStr;
+
+        for (int i = 0; i < playerLives; i++)
+            livesStr += heart_symbol + " ";
+
+        livesStr.Remove(livesStr.Length - 1);
+        return livesStr;
+    }
+
     #endregion
 
     #region Public Methods
 
     public void WaveComplete()
     {
-        currState = GameStates.Priming;
-        primeTime = timeBetweenWaves;
-        waveIndex += 1;
-        currWaveMap = waveMaps[waveIndex];
+        if (playerLives > 0)
+        {
+            currState = GameStates.Priming;
+            primeTime = timeBetweenWaves;
+            waveIndex += 1;
+            currWaveMap = waveMaps[waveIndex];
+            conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
+        }
+    }
+
+    public void DecreaseScore()
+    {
+        score -= 4;
+    }
+
+    public void IncreaseScore()
+    {
+        score += 2;
     }
 
     public void ItemMissed()
     {
-        score -= 8;
-    }
-
-    public void ItemBinned()
-    {
-        score += 2;
+        playerLives -= 1;
+        livesDisplay.text = CreateLivesString();
     }
 
     #endregion

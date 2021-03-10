@@ -44,14 +44,13 @@ public class spawnItems : MonoBehaviour
                 gm.WaveComplete();
             }
         }
-        else
+        else if (gm.currState.Equals(GameStates.Priming) || gm.currState.Equals(GameStates.Idle))
         {
             if (waveMap != gm.currWaveMap && gm.currWaveMap != null)
                 waveMap = gm.currWaveMap;
 
             if (itemQueue.Count == 0 && waveMap != null)
             {
-                Debug.Log(waveMap.wave_id + " " + waveMap.num_contam + " " + waveMap.num_recycle);
                 CreateItemQueue(waveMap);
             }
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 209110126117374487}
   m_Layer: 0
   m_Name: Straight Conveyor
-  m_TagString: Untagged
+  m_TagString: straight_conv
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,10 @@ PrefabInstance:
     - target: {fileID: 1892120617511156, guid: 786a36b70b52e824597fe7715fbc6652, type: 3}
       propertyPath: m_Name
       value: Flat 1m
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892120617511156, guid: 786a36b70b52e824597fe7715fbc6652, type: 3}
+      propertyPath: m_TagString
+      value: straight_conv
       objectReference: {fileID: 0}
     - target: {fileID: 4434137782705094, guid: 786a36b70b52e824597fe7715fbc6652, type: 3}
       propertyPath: m_RootOrder

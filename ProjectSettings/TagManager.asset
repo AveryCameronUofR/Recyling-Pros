@@ -7,6 +7,8 @@ TagManager:
   - projectile
   - goodItem
   - badItem
+  - corner_conv
+  - straight_conv
   layers:
   - Default
   - TransparentFX
