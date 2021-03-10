@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4443755044167599354}
   m_Layer: 0
   m_Name: TinCan v1
-  m_TagString: grabbable
+  m_TagString: goodItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

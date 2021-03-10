@@ -7,17 +7,27 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //Public Members
+    #region Members
     public static GameManager gm;
     public Text scoreDisplay;
+    public Text waveNumberDisplay;
+    public Text waveDescDisplay;
+    public Text timerDisplayHeading;
+    public Text timerDisplayTime;
+    public float timeBetweenWaves;
 
-    // Private Members
+    public WaveMap currWaveMap { get; private set; }
+    public GameStates currState { get; private set; }
+
     private int score = 0;
     private readonly string waveMapDir = System.IO.Directory.GetCurrentDirectory() + "/Assets/5 - JSON_WaveScripts/";
     private List<WaveMap> waveMaps;
-    private WaveMap currWave;
-    private enum GameStates { Idle, Priming, Playing, GameOver };
-    private GameStates currState = GameStates.Idle;
+    private int waveIndex = 0;
+    private float primeTime = 0.0f;
+    
+
+    public enum GameStates { Idle, Priming, Playing, GameOver };
+    #endregion
 
     [Serializable]
     public class WaveMap
@@ -39,7 +49,15 @@ public class GameManager : MonoBehaviour
         scoreDisplay.text = "Score: " + score;
 
         waveMaps = LoadWaves();
-        currWave = waveMaps[0];
+        currWaveMap = waveMaps[waveIndex];
+
+        waveDescDisplay.gameObject.SetActive(false);
+        timerDisplayHeading.gameObject.SetActive(false);
+        timerDisplayTime.gameObject.SetActive(false);
+
+        currState = GameStates.Idle;
+
+        primeTime = timeBetweenWaves;
     }
 
     private void Update()
@@ -49,13 +67,45 @@ public class GameManager : MonoBehaviour
         switch (currState)
         {
             case GameStates.Idle:
-                //Wait for player input to begin playing
+                primeTime -= Time.deltaTime;
+                if (primeTime <= 0)
+                {
+                    currState = GameStates.Playing;
+                    primeTime = timeBetweenWaves;
+                }
                 break;
             case GameStates.Priming:
-                //Start timer for x amount of seconds, then Playing
+                primeTime -= Time.deltaTime;
+
+                if (!timerDisplayHeading.gameObject.activeSelf)
+                {
+                    timerDisplayHeading.gameObject.SetActive(true);
+                    timerDisplayTime.gameObject.SetActive(true);
+                    waveDescDisplay.gameObject.SetActive(false);
+                }
+
+                timerDisplayTime.text = primeTime.ToString("0.00") + "s";
+
+                if (primeTime <= 0)
+                {
+                    currState = GameStates.Playing;
+                    primeTime = timeBetweenWaves;
+                }
                 break;
             case GameStates.Playing:
-                //Play until wave complete or game over
+                if (!waveDescDisplay.gameObject.activeSelf)
+                {
+                    waveDescDisplay.gameObject.SetActive(true);
+                    timerDisplayHeading.gameObject.SetActive(false);
+                    timerDisplayTime.gameObject.SetActive(false);
+                }
+
+                if (currWaveMap != null)
+                {
+                    waveNumberDisplay.text = "Wave: " + currWaveMap.wave_id;
+                    waveDescDisplay.text = currWaveMap.wave_name;
+                }
+                    
                 break;
             case GameStates.GameOver:
                 //Return to menu?
@@ -82,6 +132,15 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Public Methods
+
+    public void WaveComplete()
+    {
+        currState = GameStates.Priming;
+        primeTime = timeBetweenWaves;
+        waveIndex += 1;
+        currWaveMap = waveMaps[waveIndex];
+    }
+
     public void ItemMissed()
     {
         score -= 8;
@@ -91,5 +150,6 @@ public class GameManager : MonoBehaviour
     {
         score += 2;
     }
+
     #endregion
 }

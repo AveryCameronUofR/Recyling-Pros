@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2657293316985257251}
   m_Layer: 0
   m_Name: Can v1
-  m_TagString: grabbable
+  m_TagString: goodItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

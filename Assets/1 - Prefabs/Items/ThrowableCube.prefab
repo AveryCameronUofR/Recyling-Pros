@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 9017455082646599392}
   m_Layer: 0
   m_Name: ThrowableCube
-  m_TagString: grabbable
+  m_TagString: goodItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

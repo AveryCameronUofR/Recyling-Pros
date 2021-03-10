@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - grabbable
+  - projectile
+  - goodItem
+  - badItem
   layers:
   - Default
   - TransparentFX
