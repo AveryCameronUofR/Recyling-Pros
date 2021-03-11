@@ -29,6 +29,7 @@ public class conveyorController : MonoBehaviour
     {
         foreach (LinearConveyor conv in linearConvScripts)
         {
+            Debug.Log(speed);
             conv.ChangeSpeed(speed);
         }
 

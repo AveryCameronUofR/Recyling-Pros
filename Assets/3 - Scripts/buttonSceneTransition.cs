@@ -12,5 +12,9 @@ public class buttonSceneTransition : MonoBehaviour
     {
         if (text.text == "START")
             SceneManager.LoadScene("Recycling Warehouse");
+        if (text.text == "RESTART")
+            SceneManager.LoadScene("Recycling Warehouse");
+        if (text.text == "RETURN TO MENU")
+            SceneManager.LoadScene("MainMenu");
     }
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/0 - Scenes/Main Menu/MainMenu.unity
+    guid: 6d4e5ff27fdd88b40bc67417836a4667
+  - enabled: 1
     path: Assets/0 - Scenes/Recycling Warehouse/Recycling Warehouse.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:

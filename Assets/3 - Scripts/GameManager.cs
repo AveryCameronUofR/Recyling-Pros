@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Text timerDisplayTime;
     public Text gameoverDisplay;
     public Text livesDisplay;
+    public Text introDisplay;
     public GameObject conveyor;
     public float timeBetweenWaves;
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     private List<WaveMap> waveMaps;
     private int waveIndex = 0;
     private float primeTime = 0.0f;
+    private bool exitIdle = false;
     private conveyorController conveyorCntrl;
     private string heart_symbol = "\u2764";
 
@@ -79,11 +81,10 @@ public class GameManager : MonoBehaviour
         switch (currState)
         {
             case GameStates.Idle:
-                primeTime -= Time.deltaTime;
-                if (primeTime <= 0)
+                if (exitIdle)
                 {
                     currState = GameStates.Playing;
-                    primeTime = timeBetweenWaves;
+                    introDisplay.gameObject.SetActive(false);
                 }
                 break;
             case GameStates.Priming:
@@ -168,6 +169,11 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Public Methods
+
+    public void ExitIdle()
+    {
+        exitIdle = true;
+    }
 
     public void WaveComplete()
     {
