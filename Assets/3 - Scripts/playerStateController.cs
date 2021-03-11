@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerStateController : MonoBehaviour
 {
@@ -19,17 +20,25 @@ public class playerStateController : MonoBehaviour
 
     void Update()
     {
-        playerState = GameManager.gm.currState;
-
-        if (playerState.Equals(GameManager.GameStates.GameOver))
+        if (SceneManager.GetActiveScene().Equals("MainMenu"))
         {
             controllerInput.enabled = true;
             raycastPointer.enabled = true;
-        }
+        }    
         else
         {
-            controllerInput.enabled = false;
-            raycastPointer.enabled = false;
-        }
+            playerState = GameManager.gm.currState;
+
+            if (playerState.Equals(GameManager.GameStates.GameOver))
+            {
+                controllerInput.enabled = true;
+                raycastPointer.enabled = true;
+            }
+            else
+            {
+                controllerInput.enabled = false;
+                raycastPointer.enabled = false;
+            }
+        }    
     }
 }
