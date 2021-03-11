@@ -298,6 +298,7 @@ MonoBehaviour:
   skeletonPoser: {fileID: 0}
   handFollowTransform: 1
   highlightOnHover: 1
+  useAlternateHighlight: 1
   hideHighlight: []
   hoverPriority: 0
 --- !u!114 &454488738

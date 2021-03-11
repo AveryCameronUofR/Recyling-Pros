@@ -60,12 +60,15 @@ namespace Valve.VR.InteractionSystem
 
         [Tooltip("Set whether or not you want this interactible to highlight when hovering over it")]
         public bool highlightOnHover = true;
+        [Tooltip("Custom addition for recycling pros. True means the alternate highlight should be used.")]
+        public bool useAlternateHighlight;
         protected MeshRenderer[] highlightRenderers;
         protected MeshRenderer[] existingRenderers;
         protected GameObject highlightHolder;
         protected SkinnedMeshRenderer[] highlightSkinnedRenderers;
         protected SkinnedMeshRenderer[] existingSkinnedRenderers;
         protected static Material highlightMat;
+        protected static Material highlightMat_1;
         [Tooltip("An array of child gameObjects to not render a highlight for. Things like transparent parts, vfx, etc.")]
         public GameObject[] hideHighlight;
 
@@ -100,6 +103,16 @@ namespace Valve.VR.InteractionSystem
 
         protected virtual void Start()
         {
+            if (highlightMat_1 == null)
+#if UNITY_URP
+                highlightMat_1 = (Material)Resources.Load("SteamVR_HoverHighlight_URP", typeof(Material));
+#else
+                highlightMat_1 = (Material)Resources.Load("SteamVR_HoverHighlight_1", typeof(Material));
+#endif
+
+            if (highlightMat_1 == null)
+                Debug.LogError("<b>[SteamVR Interaction]</b> Hover Highlight Material 1 is missing. Please create a material named 'SteamVR_HoverHighlight_1' and place it in a Resources folder", this);
+
             if (highlightMat == null)
 #if UNITY_URP
                 highlightMat = (Material)Resources.Load("SteamVR_HoverHighlight_URP", typeof(Material));
@@ -153,11 +166,22 @@ namespace Valve.VR.InteractionSystem
                 newSkinnedHolder.transform.parent = highlightHolder.transform;
                 SkinnedMeshRenderer newSkinned = newSkinnedHolder.AddComponent<SkinnedMeshRenderer>();
                 Material[] materials = new Material[existingSkinned.sharedMaterials.Length];
-                for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
-                {
-                    materials[materialIndex] = highlightMat;
-                }
 
+                if (useAlternateHighlight)
+                {
+                    for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
+                    {
+                        materials[materialIndex] = highlightMat_1;
+                    }
+                }
+                else
+                {
+                    for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
+                    {
+                        materials[materialIndex] = highlightMat;
+                    }
+                }
+                
                 newSkinned.sharedMaterials = materials;
                 newSkinned.sharedMesh = existingSkinned.sharedMesh;
                 newSkinned.rootBone = existingSkinned.rootBone;
@@ -186,9 +210,19 @@ namespace Valve.VR.InteractionSystem
                 MeshRenderer newRenderer = newFilterHolder.AddComponent<MeshRenderer>();
 
                 Material[] materials = new Material[existingRenderer.sharedMaterials.Length];
-                for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
+                if (useAlternateHighlight)
                 {
-                    materials[materialIndex] = highlightMat;
+                    for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
+                    {
+                        materials[materialIndex] = highlightMat_1;
+                    }
+                }
+                else
+                {
+                    for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
+                    {
+                        materials[materialIndex] = highlightMat;
+                    }
                 }
                 newRenderer.sharedMaterials = materials;
 
@@ -290,7 +324,7 @@ namespace Valve.VR.InteractionSystem
             }
         }
 
-
+        
         protected float blendToPoseTime = 0.1f;
         protected float releasePoseBlendTime = 0.2f;
 
