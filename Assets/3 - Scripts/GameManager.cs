@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private int playerLives;
     private readonly string waveMapDir = System.IO.Directory.GetCurrentDirectory() + "/Assets/5 - JSON_WaveScripts/";
     private List<WaveMap> waveMaps;
-    private int waveIndex = 5;
+    private int waveIndex = 0;
     private float primeTime = 0.0f;
     private bool exitIdle = false;
     private conveyorController conveyorCntrl;
