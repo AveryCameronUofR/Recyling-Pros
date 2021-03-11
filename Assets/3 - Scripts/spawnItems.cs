@@ -6,7 +6,6 @@ using static GameManager;
 
 public class spawnItems : MonoBehaviour
 {
-    public float timeToSpawn = 2.0f;
     public GameObject[] recyclables;
     public GameObject[] contaminants;
 
@@ -15,10 +14,12 @@ public class spawnItems : MonoBehaviour
     private bool isPlaying = false;
     private float currTime = 0.0f;
     private int numItemsLeft = 0;
+    private int itemIndex = 0;
+    private float conveyorWidth = 0.6f;
 
     private void Start()
     {
-        currTime = timeToSpawn;
+        currTime = waveMap.spawn_delays[0];
     }
 
     private void Update()
@@ -28,6 +29,11 @@ public class spawnItems : MonoBehaviour
             currTime -= Time.deltaTime;
             numItemsLeft = gameObject.transform.childCount;
 
+            if (numItemsLeft == 0 && itemQueue.Count == 0)
+            {
+                gm.WaveComplete();
+            }
+
             //if currTime < 0, pop item off queue and spawn
             if (currTime <= 0 && itemQueue.Count != 0)
             {
@@ -35,14 +41,12 @@ public class spawnItems : MonoBehaviour
 
                 GameObject spawnedItem = Instantiate(itemToSpawn, gameObject.transform);
                 spawnedItem.transform.parent = gameObject.transform;
+                spawnedItem.transform.position += Vector3.left * RandomDisplacement();
 
-                currTime = timeToSpawn;
+                currTime = waveMap.spawn_delays[itemIndex++];
             }
 
-            if (numItemsLeft == 0 && itemQueue.Count == 0)
-            {
-                gm.WaveComplete();
-            }
+            
         }
         else if (gm.currState.Equals(GameStates.Priming) || gm.currState.Equals(GameStates.Idle))
         {
@@ -109,6 +113,12 @@ public class spawnItems : MonoBehaviour
             list[i] = list[rng];
             list[rng] = tmp;
         }
+    }
+
+    // random displacement for items on the conveyor
+    private float RandomDisplacement()
+    {
+        return (Random.value * conveyorWidth) - (0.5f * conveyorWidth);
     }
 }
 

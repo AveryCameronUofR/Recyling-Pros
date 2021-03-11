@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private int playerLives;
     private readonly string waveMapDir = System.IO.Directory.GetCurrentDirectory() + "/Assets/5 - JSON_WaveScripts/";
     private List<WaveMap> waveMaps;
-    private int waveIndex = 0;
+    private int waveIndex = 5;
     private float primeTime = 0.0f;
     private bool exitIdle = false;
     private conveyorController conveyorCntrl;
@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
 
     public enum GameStates { Idle, Priming, Playing, GameOver };
     #endregion
+
+    public class Levels 
+    {
+        public WaveMap[] levels;
+    }
 
     [Serializable]
     public class WaveMap
@@ -45,6 +50,7 @@ public class GameManager : MonoBehaviour
         public int num_recycle;
         public int num_contam;
         public float conv_spd;
+        public int[] spawn_delays;
     }
 
     #region Private Methods
@@ -138,16 +144,12 @@ public class GameManager : MonoBehaviour
 
     private List<WaveMap> LoadWaves()
     {
-        List<WaveMap> waveMaps = new List<WaveMap>();
-        string[] jsonWaveMaps = System.IO.Directory.GetFiles(waveMapDir, "*.json");
+        string[] jsonWaves = System.IO.Directory.GetFiles(waveMapDir, "levels.json");
 
-        foreach (string jsonWaveMap in jsonWaveMaps)
-        {
-            string json = System.IO.File.ReadAllText(jsonWaveMap);
-            WaveMap map = JsonUtility.FromJson<WaveMap>(json);
+        string json = System.IO.File.ReadAllText(jsonWaves[0]);
+        Levels levels = JsonUtility.FromJson<Levels>(json);
 
-            waveMaps.Add(map);
-        }
+        List<WaveMap> waveMaps = new List<WaveMap>(levels.levels);
 
         return waveMaps;
     }
