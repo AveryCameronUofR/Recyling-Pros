@@ -19,11 +19,14 @@ public class spawnItems : MonoBehaviour
 
     private void Start()
     {
-        currTime = waveMap.spawn_delays[0];
+
     }
 
     private void Update()
     {
+        if (currTime.Equals(null))
+            currTime = waveMap.spawn_delays[0];
+
         if (gm.currState.Equals(GameStates.Playing))
         {
             currTime -= Time.deltaTime;
