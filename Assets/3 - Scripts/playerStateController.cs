@@ -13,13 +13,14 @@ public class playerStateController : MonoBehaviour
 
     void Start()
     {
-        playerState = GameManager.gm.currState;
         controllerInput = rightHand.GetComponent<controllerInput>();
         raycastPointer = rightHand.GetComponent<raycastPointer>();
     }
 
     void Update()
     {
+        playerState = GameManager.gm.currState;
+
         if (SceneManager.GetActiveScene().Equals("MainMenu"))
         {
             controllerInput.enabled = true;

@@ -7,6 +7,8 @@ using Valve.VR.InteractionSystem;
 
 public class controllerInput : MonoBehaviour
 {
+    public Player player;
+    public float playerHeight = 1.5f;
     void Update()
     {
         bool rTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
@@ -17,6 +19,14 @@ public class controllerInput : MonoBehaviour
             {
                 ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, new BaseEventData(EventSystem.current), ExecuteEvents.submitHandler);
             }
+        }
+
+        bool bButtonState = SteamVR_Input.GetState("ResetHeight", SteamVR_Input_Sources.LeftHand);
+        if (bButtonState == true)
+        {
+            float tempPlayerHeight = player.eyeHeight;
+            Debug.Log(player.eyeHeight);
+            player.transform.localScale = Vector3.one * (playerHeight / tempPlayerHeight);
         }
     }
 }
