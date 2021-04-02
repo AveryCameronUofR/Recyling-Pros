@@ -7,12 +7,13 @@ using UnityEngine.EventSystems;
 public class raycastPointer : MonoBehaviour
 {
     public Material material;
+    public Transform pointer;
 
     private LineRenderer lineRenderer;
 
     void Start() 
     {
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer = pointer.gameObject.AddComponent<LineRenderer>();
         
         lineRenderer.startWidth = 0.01f;
         lineRenderer.endWidth = 0.01f;

@@ -11,7 +11,7 @@ public class spawnItems : MonoBehaviour
 
     private WaveMap waveMap;
     private Queue<GameObject> itemQueue = new Queue<GameObject>();
-    private bool isPlaying = false;
+    // private bool isPlaying = false;
     private float currTime = 0.0f;
     private int numItemsLeft = 0;
     private int itemIndex = 0;
