@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class raycastPointer : MonoBehaviour
 {
     public Material material;
     public Transform pointer;
+    public string hand;
 
     private LineRenderer lineRenderer;
 
     void Start() 
-    {
-        lineRenderer = pointer.gameObject.AddComponent<LineRenderer>();
-        
-        lineRenderer.startWidth = 0.01f;
-        lineRenderer.endWidth = 0.01f;
-        lineRenderer.material = new Material(material);
-        lineRenderer.positionCount = 2;
-
+    {   
+        if (hand == "right")
+            CreateLineRenderer();
         //pointerFinger = gameObject.transform.Find("ControllerButtonHints");
         //Debug.Log(pointerFinger.ToString());
     }
@@ -33,7 +30,7 @@ public class raycastPointer : MonoBehaviour
 
         RaycastHit hit;
         if (Physics.Raycast(gameObject.transform.position, transform.TransformDirection(Vector3.forward), out hit))
-        {
+        {      
             lineRenderer.enabled = true;
 
             var hit_obj = hit.collider.gameObject;
@@ -67,5 +64,25 @@ public class raycastPointer : MonoBehaviour
     public Transform GetMyFinger(Transform hand)
     {
         return hand.Find("vr_glove_right_model_slim(Clone)/slim_r/Root/finger_index_r_aux");
+    }
+
+    public void CreateLineRenderer() 
+    {
+        if (lineRenderer) {
+            return;
+        }
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        
+        lineRenderer.startWidth = 0.01f;
+        lineRenderer.endWidth = 0.01f;
+        lineRenderer.material = new Material(material);
+        lineRenderer.positionCount = 2;
+
+    }
+
+    public void DeleteLineRenderer()
+    {
+        Destroy(gameObject.GetComponent<LineRenderer>());
+        lineRenderer = null;
     }
 }

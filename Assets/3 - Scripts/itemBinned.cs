@@ -7,7 +7,7 @@ public class itemBinned : MonoBehaviour
 {
     void OnTriggerEnter(Collider col)
     {
-        if (gameObject.CompareTag("gooditem"))
+        if (gameObject.CompareTag("goodItem"))
         {
             if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
             {

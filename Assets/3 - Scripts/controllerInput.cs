@@ -10,12 +10,36 @@ public class controllerInput : MonoBehaviour
     public Player player;
     public float playerHeight = 1.5f;
 
+    private playerStateController pStateController;
+
+    private string selectedHand = "right";
+    private bool selectedTriggerState;
     private GameObject itemAttached;
+
+    void Start() 
+    {
+        pStateController = player.GetComponent<playerStateController>();
+    }
 
     void Update()
     {
+
         bool rTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
-        if (rTriggerState == true)
+        bool lTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.LeftHand);
+
+        if (lTriggerState && selectedHand == "right")
+        {
+            selectedHand = "left";
+            pStateController.SelectHand("left");
+        } else if (rTriggerState && selectedHand == "left")
+        {
+            selectedHand = "right";
+            pStateController.SelectHand("right");
+        }
+
+        selectedTriggerState = (selectedHand == "right") ? rTriggerState : lTriggerState;
+
+        if (selectedTriggerState == true)
         {
             if (EventSystem.current.currentSelectedGameObject != null)
             {
