@@ -7,15 +7,31 @@ public class itemBinned : MonoBehaviour
 {
     void OnTriggerEnter(Collider col)
     {
-        if (gameObject.CompareTag(col.gameObject.tag))
+        if (gameObject.CompareTag("gooditem"))
         {
-            GameManager.gm.IncreaseScore();
-            Destroy(col.gameObject);
+            if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
+            {
+                GameManager.gm.IncreaseScore();
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                GameManager.gm.DecreaseScore();
+                Destroy(col.gameObject);
+            }
         }
         else
         {
-            GameManager.gm.DecreaseScore();
-            Destroy(col.gameObject);
+            if (GameManager.gm.badItems.Contains(col.gameObject.tag))
+            {
+                GameManager.gm.IncreaseScore();
+                Destroy(col.gameObject);
+            }
+            else
+            {
+                GameManager.gm.DecreaseScore();
+                Destroy(col.gameObject);
+            }
         }
     }
 }

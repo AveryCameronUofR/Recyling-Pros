@@ -30,7 +30,6 @@ public class controllerInput : MonoBehaviour
             player.transform.localScale = Vector3.one * (playerHeight / tempPlayerHeight);
         }
 
-        Debug.Log("gameobj: " + gameObject.ToString());
         if (itemAttached && itemAttached.CompareTag("popcan"))
         {
             popcanBehaviour pb = itemAttached.GetComponent<popcanBehaviour>();
@@ -45,7 +44,6 @@ public class controllerInput : MonoBehaviour
                 pb.inHand = true;
             }
         }
-
         itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
     }
 }
