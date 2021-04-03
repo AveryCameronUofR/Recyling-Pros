@@ -401,6 +401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33970a635edbbf941882793b38b1b90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 3
+  maxVelocity: 2.8
+  safetyDelay: 0.5
+  shakeSpeed: 0.2
   initialMat: {fileID: 2100000, guid: bff1371f75569e44e8c16b78264d9219, type: 2}
   popcanExplodeMat: {fileID: 2100000, guid: ebd0fdb18de224a4ba2aa70ab393f6d4, type: 2}
+  explosion: {fileID: 6175590761723525847, guid: 6a6bbbfdee7a06a4fb5a228090e5d1dc,
+    type: 3}
