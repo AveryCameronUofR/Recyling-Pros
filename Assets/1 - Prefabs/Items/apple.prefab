@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5981166998316409244}
   m_Layer: 8
   m_Name: apple
-  m_TagString: badItem
+  m_TagString: apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

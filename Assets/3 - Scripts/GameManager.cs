@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class GameManager : MonoBehaviour
 
     public WaveMap currWaveMap { get; private set; }
     public GameStates currState { get; private set; }
+
+    public readonly List<string> goodItems = new List<string> { "popcan", "tincan" };
+    public readonly List<string> badItems = new List<string> { "apple" };
 
     private int score = 0;
     private int playerLives;

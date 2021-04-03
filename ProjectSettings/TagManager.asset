@@ -9,6 +9,9 @@ TagManager:
   - badItem
   - corner_conv
   - straight_conv
+  - popcan
+  - apple
+  - tincan
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - rangedGrab
+  - item
   - 
   - 
   - 

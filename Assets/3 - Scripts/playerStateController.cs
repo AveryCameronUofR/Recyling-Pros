@@ -37,7 +37,7 @@ public class playerStateController : MonoBehaviour
             }
             else
             {
-                controllerInput.enabled = false;
+                //controllerInput.enabled = false;
                 raycastPointer.enabled = false;
             }
         }    

@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 6330632142372459028}
   m_Layer: 8
   m_Name: Can v1
-  m_TagString: goodItem
+  m_TagString: popcan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,3 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33970a635edbbf941882793b38b1b90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelocity: 3
+  initialMat: {fileID: 2100000, guid: bff1371f75569e44e8c16b78264d9219, type: 2}
+  popcanExplodeMat: {fileID: 2100000, guid: ebd0fdb18de224a4ba2aa70ab393f6d4, type: 2}

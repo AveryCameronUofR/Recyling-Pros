@@ -9,10 +9,12 @@ public class controllerInput : MonoBehaviour
 {
     public Player player;
     public float playerHeight = 1.5f;
+
+    private GameObject itemAttached;
+
     void Update()
     {
         bool rTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
-
         if (rTriggerState == true)
         {
             if (EventSystem.current.currentSelectedGameObject != null)
@@ -27,5 +29,23 @@ public class controllerInput : MonoBehaviour
             float tempPlayerHeight = player.eyeHeight;
             player.transform.localScale = Vector3.one * (playerHeight / tempPlayerHeight);
         }
+
+        Debug.Log("gameobj: " + gameObject.ToString());
+        if (itemAttached && itemAttached.CompareTag("popcan"))
+        {
+            popcanBehaviour pb = itemAttached.GetComponent<popcanBehaviour>();
+
+            if (gameObject.GetComponent<Hand>().currentAttachedObject == null)
+            {
+                pb.inHand = false;
+                pb.ResetMaterial();
+            }
+            else
+            {
+                pb.inHand = true;
+            }
+        }
+
+        itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
     }
 }

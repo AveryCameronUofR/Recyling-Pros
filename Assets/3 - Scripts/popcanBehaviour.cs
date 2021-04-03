@@ -6,26 +6,46 @@ using Valve.VR;
 
 public class popcanBehaviour : MonoBehaviour
 {
-    private Hand myHand;
+    public float maxVelocity = 3.0f;
+    public Material initialMat;
+    public Material popcanExplodeMat;
+
+    public bool inHand { get; set; }
+
+    private Rigidbody rb;
+    private float fadeAmount;
+    
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+    }
 
     private void Update()
     {
-        if (myHand != null)
+        if (inHand)
         {
-            Debug.Log("MY HAND: " + myHand.ToString());
-            SteamVR_TrackedObject obj = myHand.GetComponent<SteamVR_TrackedObject>();
-            Debug.Log("MY INDEX: " + obj.index);
+            ChangeMaterial(rb.velocity.magnitude);
         }
     }
 
-    private void OnCollisionEnter(Collision col)
+    public void ChangeMaterial(float currVelocity)
     {
-        myHand = col.gameObject.GetComponent<Hand>();
-        // Debug.Log("MY HAND: " + myHand.ToString());
+        if (currVelocity < maxVelocity)
+        {
+            MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+            foreach (MeshRenderer r in renderers)
+            {
+                r.material.Lerp(initialMat, popcanExplodeMat, currVelocity / maxVelocity);
+            }
+        }
     }
 
-    private void OnCollisionExit(Collision col)
+    public void ResetMaterial()
     {
-        //myHand = null;
+        MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer r in renderers)
+        {
+            r.material = new Material(initialMat);
+        }
     }
 }
