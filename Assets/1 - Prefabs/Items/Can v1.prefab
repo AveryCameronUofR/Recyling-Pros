@@ -90,13 +90,14 @@ GameObject:
   - component: {fileID: 8538502840065971796}
   - component: {fileID: -8047526394973574901}
   - component: {fileID: 8211296207654916146}
+  - component: {fileID: 2815759335345602351}
   - component: {fileID: 6779631063432493257}
   - component: {fileID: 8545675236966213252}
   - component: {fileID: 4944325907058636770}
   - component: {fileID: 2657293316985257251}
-  - component: {fileID: 2815759335345602351}
   - component: {fileID: -8755053908826092795}
   - component: {fileID: 3146642176009018740}
+  - component: {fileID: 6330632142372459028}
   m_Layer: 8
   m_Name: Can v1
   m_TagString: goodItem
@@ -174,6 +175,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &2815759335345602351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022130298602360046}
+  m_Material: {fileID: 13400000, guid: d02177c24beb8ff48b93549c3e059612, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -17.5, y: -33, z: -16.7}
+  m_Center: {x: 0, y: 7.44, z: 0}
 --- !u!114 &6779631063432493257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,19 +358,6 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!65 &2815759335345602351
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9022130298602360046}
-  m_Material: {fileID: 13400000, guid: d02177c24beb8ff48b93549c3e059612, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: -17.5, y: -33, z: -16.7}
-  m_Center: {x: 0, y: 7.44, z: 0}
 --- !u!114 &-8755053908826092795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +382,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c06fe3773f060499e399885f92172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOut: 2
+  timeToDespawn: 3
+  secondsOfColourChange: 2
   detachChildren: 0
-  despawnMaterial: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
+  dyingColor: {r: 1, g: 0, b: 0, a: 0}
+  initialColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+  dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
+  initialMat: {fileID: 2100000, guid: bff1371f75569e44e8c16b78264d9219, type: 2}
+--- !u!114 &6330632142372459028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022130298602360046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33970a635edbbf941882793b38b1b90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,28 +4,77 @@ using UnityEngine;
 
 public class timedObjectDestroyer : MonoBehaviour
 {
-	public float timeOut = 1.0f;
+	public float timeToDespawn;
+	public float secondsOfColourChange;
 	public bool detachChildren = false;
-	public Color despawnColor = Color.red;
+	public Color dyingColor;
+	public Color initialColor;
+	public Material dyingMat;
+	public Material initialMat;
 
-	private Renderer rend;
-	private Color baseColor;
 	private bool dying;
-	private float currTime = 0.0f;
+	private float fadeAmount;
+	private float fadeDuration;
 
-    private void Start()
+	private void Start()
     {
-		rend = gameObject.GetComponent<MeshRenderer>();
+		if (timeToDespawn < secondsOfColourChange)
+			timeToDespawn = secondsOfColourChange;
+
+		fadeDuration = secondsOfColourChange;
 	}
 
-    public void KillMe()
+    private void Update()
+    {
+		if (dying)
+			ChangeMaterial();
+	}
+
+	public void ChangeColour()
 	{
-		// invote the DestroyNow funtion to run after timeOut seconds
-		StartCoroutine(LerpFunction(despawnColor, timeOut));
+		if (fadeAmount < fadeDuration)
+		{
+			fadeAmount += Time.deltaTime * fadeDuration;
+
+			MeshRenderer [] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+				
+			foreach (MeshRenderer r in renderers)
+			{
+				r.material.color = Color.Lerp(initialColor, dyingColor, fadeAmount);
+			}
+		}
+	}
+
+	public void ChangeMaterial()
+	{
+		if (fadeAmount < fadeDuration)
+		{
+			fadeAmount += Time.deltaTime * fadeDuration;
+
+			MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+			foreach (MeshRenderer r in renderers)
+			{
+				r.material.Lerp(initialMat, dyingMat, fadeAmount);
+			}
+		}
+	}
+
+	public void KillMe()
+	{
+		dying = true;
+		Invoke("DestroyNow", timeToDespawn);
 	}
 
 	public void SaveMe()
     {
+		dying = false;
+		
+		MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer r in renderers)
+		{
+			r.material = new Material(initialMat);
+		}
+
 		CancelInvoke();
     }		
 
@@ -41,24 +90,8 @@ public class timedObjectDestroyer : MonoBehaviour
 			transform.DetachChildren();
 		}
 
+		GameManager.gm.DecreaseScore();
 		// destory the game Object
 		Destroy(gameObject);
-	}
-
-	IEnumerator LerpFunction(Color despawnColor, float duration)
-	{
-		float time = 0;
-
-		baseColor = rend.material.color;
-
-		while (time < duration)
-		{
-			rend.material.color = Color.Lerp(baseColor, despawnColor, time / duration);
-			time += Time.deltaTime;
-			yield return null;
-		}
-
-		rend.material.color = despawnColor;
-		Invoke("DestroyNow", (timeOut / 4));
 	}
 }

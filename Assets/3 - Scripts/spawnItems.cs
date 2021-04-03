@@ -35,6 +35,7 @@ public class spawnItems : MonoBehaviour
             if (numItemsLeft == 0 && itemQueue.Count == 0)
             {
                 gm.WaveComplete();
+                itemIndex = 0;
             }
 
             //if currTime < 0, pop item off queue and spawn
@@ -45,7 +46,6 @@ public class spawnItems : MonoBehaviour
                 GameObject spawnedItem = Instantiate(itemToSpawn, gameObject.transform);
                 spawnedItem.transform.parent = gameObject.transform;
                 spawnedItem.transform.position += Vector3.left * RandomDisplacement();
-
                 currTime = waveMap.spawn_delays[itemIndex++];
             }
 

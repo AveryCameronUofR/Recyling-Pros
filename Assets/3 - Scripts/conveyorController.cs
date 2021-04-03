@@ -10,17 +10,17 @@ public class conveyorController : MonoBehaviour
     private List<LinearConveyor> linearConvScripts = new List<LinearConveyor>();
     private List<RadialConveyor> radialConvScripts = new List<RadialConveyor>();
 
-    private void Start()
+    private void Awake()
     {
         foreach (GameObject conv in conveyorChildren)
         {
             if (conv.gameObject.CompareTag("straight_conv"))
-            {
-                linearConvScripts.Add(conv.GetComponent<LinearConveyor>());
+            {   
+                linearConvScripts.Add(conv.transform.Find("Flat 1m").GetComponent<LinearConveyor>());
             }
             else
             {
-                radialConvScripts.Add(conv.GetComponent<RadialConveyor>());
+                radialConvScripts.Add(conv.transform.Find("Flat 2r CW").GetComponent<RadialConveyor>());
             }
         }
     }
@@ -29,7 +29,6 @@ public class conveyorController : MonoBehaviour
     {
         foreach (LinearConveyor conv in linearConvScripts)
         {
-            Debug.Log(speed);
             conv.ChangeSpeed(speed);
         }
 

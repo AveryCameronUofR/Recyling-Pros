@@ -4,9 +4,9 @@
             "wave_id": 1,
             "wave_name": "Welcome to Recycling Pros!",
             "num_recycle": 1,
-            "num_contam": 1,
-            "conv_spd": 5,
-            "spawn_delays": [2, 2]
+            "num_contam": 2,
+            "conv_spd": 0.25,
+            "spawn_delays": [2, 2, 2]
         },
         {
             "wave_id": 2,

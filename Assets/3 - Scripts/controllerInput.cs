@@ -25,7 +25,6 @@ public class controllerInput : MonoBehaviour
         if (bButtonState == true)
         {
             float tempPlayerHeight = player.eyeHeight;
-            Debug.Log(player.eyeHeight);
             player.transform.localScale = Vector3.one * (playerHeight / tempPlayerHeight);
         }
     }

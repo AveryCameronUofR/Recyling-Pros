@@ -306,6 +306,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8abc4d67ad205f44805b3912851c501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &165063445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165063443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49169676e1d983341966f2aabdb63007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 410744836}
+  playerHeight: 1.5
 --- !u!1 &211359991
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +842,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409009621}
   m_CullTransparentMesh: 0
+--- !u!114 &410744836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11465950, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 479128524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202a6e24b48d1684398409c47161adcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &421953331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1031,6 +1057,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 144230, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 165334, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1110,6 +1144,14 @@ PrefabInstance:
     - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: useControllerHoverComponent
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019281669, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 410744836}
+    - target: {fileID: 2019281669, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2019281670, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: pointer
