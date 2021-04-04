@@ -9,16 +9,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408143034970252229}
+  - component: {fileID: 8715775950392748487}
+  - component: {fileID: 2041816713989565510}
+  - component: {fileID: 356266248677124450}
+  - component: {fileID: 9019961973790184355}
   - component: {fileID: -4488308484190831019}
   - component: {fileID: 4233370832555787970}
-  - component: {fileID: 8715775950392748487}
   - component: {fileID: -3089875410578550395}
   - component: {fileID: -6207511892466673007}
   - component: {fileID: -5622773032908838394}
   - component: {fileID: 300356499342792866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottle
-  m_TagString: Untagged
+  m_TagString: bottle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,6 +42,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &8715775950392748487
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783823534349875583}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2041816713989565510
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783823534349875583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.6859107
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.01903683, z: 0}
+--- !u!65 &356266248677124450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783823534349875583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0244114, y: 0.15867904, z: 1.119251}
+  m_Center: {x: -0.02445735, y: -1.2312924, z: -0.003630519}
+--- !u!65 &9019961973790184355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783823534349875583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35878342, y: 0.729678, z: 0.3598666}
+  m_Center: {x: 0.0036577322, y: 1.4533014, z: 0.0018514879}
 --- !u!114 &-4488308484190831019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,22 +175,6 @@ MonoBehaviour:
   onDetachedFromHand:
     m_PersistentCalls:
       m_Calls: []
---- !u!54 &8715775950392748487
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783823534349875583}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &-3089875410578550395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +286,7 @@ GameObject:
   - component: {fileID: 5204672801036688927}
   - component: {fileID: 6807312123070299243}
   - component: {fileID: 8643419677412520689}
-  - component: {fileID: 4389386184420703539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,20 +355,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4389386184420703539
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2790305721972017710}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: 8de0a3fc186b10443b4b5c254eefa65d, type: 3}
 --- !u!1 &7072707565672899869
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +366,7 @@ GameObject:
   - component: {fileID: 5297300411433522943}
   - component: {fileID: 3244704530027746367}
   - component: {fileID: 8512331739620191380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

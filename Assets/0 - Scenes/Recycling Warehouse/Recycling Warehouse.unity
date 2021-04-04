@@ -3641,7 +3641,7 @@ PrefabInstance:
     - target: {fileID: 2889866811064812833, guid: 847d2a425be3be641ab342f52ea95219,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2889866811064812839, guid: 847d2a425be3be641ab342f52ea95219,
         type: 3}
@@ -4485,7 +4485,7 @@ PrefabInstance:
     - target: {fileID: 2889866811064812833, guid: 847d2a425be3be641ab342f52ea95219,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2889866811064812839, guid: 847d2a425be3be641ab342f52ea95219,
         type: 3}
@@ -6285,6 +6285,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Spawn V2
       objectReference: {fileID: 0}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
+      propertyPath: recyclables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
+      propertyPath: contaminants.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
+      propertyPath: recyclables.Array.data[2]
+      value: 
+      objectReference: {fileID: 1783823534349875583, guid: 17d4d419848a49a46a8e68f59557784c,
+        type: 3}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
+      propertyPath: contaminants.Array.data[1]
+      value: 
+      objectReference: {fileID: 2858482421472124020, guid: 2f3ce295c6f8ba94889dda7b132f6569,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003e9026c21429249947c58b0259987a, type: 3}
 --- !u!4 &117423054188752640 stripped
@@ -6528,6 +6550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ToolSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889866811064812833, guid: 847d2a425be3be641ab342f52ea95219,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2889866811064812839, guid: 847d2a425be3be641ab342f52ea95219,
         type: 3}

@@ -29,7 +29,7 @@ public class spawnTool : MonoBehaviour
                                         gameObject.transform.position.y, 
                                         gameObject.transform.position.z - 0.25f);
 
-        GameObject spawnedTool = Instantiate(toolToSpawn, spawnLoc, Quaternion.identity, gameObject.transform);
+        GameObject spawnedTool = Instantiate(toolToSpawn, spawnLoc, toolToSpawn.transform.rotation, gameObject.transform);
         spawnedTool.tag = toolToSpawn.gameObject.tag;
         spawnedTool.transform.parent = gameObject.transform;
 

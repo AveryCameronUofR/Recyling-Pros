@@ -15,6 +15,9 @@ TagManager:
   - bomb
   - net
   - spray
+  - FxTemporaire
+  - bottle
+  - jug
   layers:
   - Default
   - TransparentFX
