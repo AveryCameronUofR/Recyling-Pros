@@ -15,6 +15,11 @@ public class controllerInput : MonoBehaviour
     private string selectedHand = "right";
     private bool selectedTriggerState;
     private GameObject itemAttached;
+    private bool rTriggerState;
+    private bool lTriggerState;
+    private bool x_ButtonState;
+
+    private delegate void HandleItemActions();
 
     void Start() 
     {
@@ -23,9 +28,8 @@ public class controllerInput : MonoBehaviour
 
     void Update()
     {
-
-        bool rTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
-        bool lTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.LeftHand);
+        rTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.RightHand);
+        lTriggerState = SteamVR_Input.GetState("InteractUI", SteamVR_Input_Sources.LeftHand);
 
         if (lTriggerState && selectedHand == "right")
         {
@@ -38,7 +42,6 @@ public class controllerInput : MonoBehaviour
         }
 
         selectedTriggerState = (selectedHand == "right") ? rTriggerState : lTriggerState;
-
         if (selectedTriggerState == true)
         {
             if (EventSystem.current.currentSelectedGameObject != null)
@@ -47,12 +50,9 @@ public class controllerInput : MonoBehaviour
             }
         }
 
-        bool bButtonState = SteamVR_Input.GetState("ResetHeight", SteamVR_Input_Sources.LeftHand);
-        if (bButtonState == true)
-        {
-            float tempPlayerHeight = player.eyeHeight;
-            player.transform.localScale = Vector3.one * (playerHeight / tempPlayerHeight);
-        }
+        x_ButtonState = SteamVR_Input.GetState("ResetHeight", SteamVR_Input_Sources.LeftHand);
+        if (x_ButtonState == true)
+            player.transform.localScale = Vector3.one * (playerHeight / player.eyeHeight);
 
         if (itemAttached && itemAttached.CompareTag("popcan"))
         {
@@ -67,6 +67,23 @@ public class controllerInput : MonoBehaviour
             {
                 pb.inHand = true;
             }
+        }
+        itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
+
+        if (itemAttached && itemAttached.CompareTag("spray"))
+        {
+            sprayCan sc = itemAttached.GetComponent<sprayCan>();
+
+            if (gameObject.GetComponent<Hand>().currentAttachedObject == null)
+            {
+                sc.inHand = false;
+            }
+            else
+            {
+                sc.inHand = true;
+            }
+
+            sc.TriggerState(rTriggerState);
         }
         itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
     }

@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 454488735}
   - component: {fileID: 454488737}
   - component: {fileID: 454488738}
-  - component: {fileID: -5662722890998836486}
   - component: {fileID: 5981166998316409244}
   m_Layer: 8
   m_Name: apple
@@ -358,18 +357,6 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &-5662722890998836486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6881330803923995767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98b2a36c51144c342a8dcb48dd370a9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5981166998316409244
 MonoBehaviour:
   m_ObjectHideFlags: 0

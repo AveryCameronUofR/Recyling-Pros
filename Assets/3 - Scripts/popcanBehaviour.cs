@@ -12,7 +12,6 @@ public class popcanBehaviour : MonoBehaviour
     public Material initialMat;
     public Material popcanExplodeMat;
     public GameObject explosion;
-
     public bool inHand { get; set; }
 
     private Rigidbody rb;
