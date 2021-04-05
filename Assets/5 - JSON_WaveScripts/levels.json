@@ -71,7 +71,7 @@
             "wave_name": "Faster conveyor!",
             "num_recycle": 9,
             "num_contam": 4,
-            "num_bombs": 0,
+            "num_bombs": 10,
             "num_fences": 0,
             "num_spray_cans": 0,
             "conv_spd": 0.6,
