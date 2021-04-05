@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
         public string wave_name;
         public int num_recycle;
         public int num_contam;
+        public int num_bombs;
+        public int num_nets;
+        public int num_spray_cans;
         public float conv_spd;
         public int[] spawn_delays;
     }

@@ -17,11 +17,6 @@ public class spawnItems : MonoBehaviour
     private int itemIndex = 0;
     private float conveyorWidth = 0.6f;
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         if (currTime.Equals(null))
