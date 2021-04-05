@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490018}
-  m_Layer: 26
+  m_Layer: 0
   m_Name: ObjectAttachmentPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightHand: {fileID: 160596}
+  leftHand: {fileID: 144230}
 --- !u!1 &109154
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,9 +888,12 @@ GameObject:
   - component: {fileID: 11450312}
   - component: {fileID: 114000011273627542}
   - component: {fileID: 114000011734077242}
+  - component: {fileID: 165063444}
+  - component: {fileID: 165063445}
+  - component: {fileID: 165063446}
   m_Layer: 26
   m_Name: LeftHand
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -946,10 +950,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   hoverUpdateInterval: 0.1
-  useControllerHoverComponent: 1
+  useControllerHoverComponent: 0
   controllerHoverComponent: tip
   controllerHoverRadius: 0.15
-  useFingerJointHover: 1
+  useFingerJointHover: 0
   fingerJointHover: 10
   fingerJointHoverRadius: 0.05
   objectAttachmentPoint: {fileID: 4000011474053580}
@@ -1016,6 +1020,47 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
+--- !u!114 &165063444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8abc4d67ad205f44805b3912851c501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &165063445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49169676e1d983341966f2aabdb63007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11465950}
+  playerHeight: 1.5
+--- !u!114 &165063446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb764712e4b1e04ab684e8f804173e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: ebd0fdb18de224a4ba2aa70ab393f6d4, type: 2}
+  pointer: {fileID: 476540}
+  hand: 
 --- !u!1 &160596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,9 +1075,10 @@ GameObject:
   - component: {fileID: 114000010591715100}
   - component: {fileID: 2019281670}
   - component: {fileID: 2019281669}
+  - component: {fileID: 2010729254}
   m_Layer: 26
   m_Name: RightHand
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1089,10 +1135,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   hoverUpdateInterval: 0.1
-  useControllerHoverComponent: 1
+  useControllerHoverComponent: 0
   controllerHoverComponent: tip
   controllerHoverRadius: 0.15
-  useFingerJointHover: 1
+  useFingerJointHover: 0
   fingerJointHover: 10
   fingerJointHoverRadius: 0.05
   objectAttachmentPoint: {fileID: 490018}
@@ -1166,12 +1212,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcb764712e4b1e04ab684e8f804173e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ebd0fdb18de224a4ba2aa70ab393f6d4, type: 2}
+  pointer: {fileID: 485514}
+  hand: 
 --- !u!114 &2019281669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,9 +1227,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49169676e1d983341966f2aabdb63007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11465950}
+  playerHeight: 1.5
+--- !u!114 &2010729254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8abc4d67ad205f44805b3912851c501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &165334
@@ -1193,7 +1255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480432}
-  m_Layer: 26
+  m_Layer: 0
   m_Name: HoverPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,7 +1412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446772}
   - component: {fileID: 11489144}
-  m_Layer: 26
+  m_Layer: 0
   m_Name: ControllerButtonHints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413580}
   - component: {fileID: 11494192}
-  m_Layer: 26
+  m_Layer: 0
   m_Name: ControllerButtonHints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000011699137176}
   - component: {fileID: 114000010777378212}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,7 +2621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000012325712216}
-  m_Layer: 26
+  m_Layer: 0
   m_Name: HoverPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2683,7 +2745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011474053580}
-  m_Layer: 26
+  m_Layer: 0
   m_Name: ObjectAttachmentPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

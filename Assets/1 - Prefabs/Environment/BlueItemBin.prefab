@@ -184,6 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9eb69e834f7014e8d13b534675c30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notificationSource: {fileID: 0}
+  correctItem: {fileID: 0}
+  incorrectItem: {fileID: 0}
 --- !u!114 &1569323812035365051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +206,7 @@ MonoBehaviour:
   hideControllerOnAttach: 1
   handAnimationOnPickup: 0
   setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
+  useHandObjectAttachmentPoint: 0
   attachEaseIn: 0
   snapAttachEaseInCurve:
     serializedVersion: 2
@@ -285,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentFlags: 85
+  attachmentFlags: 84
   attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 3

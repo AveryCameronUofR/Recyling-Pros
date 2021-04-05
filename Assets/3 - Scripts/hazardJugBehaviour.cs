@@ -24,5 +24,6 @@ public class hazardJugBehaviour : MonoBehaviour
     public void CleanMe()
     {
         contaminationAura.SetActive(false);
+        Debug.Log("IM A CLEAN JUG");
     }    
 }

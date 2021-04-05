@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: -8755053908826092795}
   - component: {fileID: 3146642176009018740}
   - component: {fileID: 6330632142372459028}
+  - component: {fileID: 8589695868388676620}
   m_Layer: 8
   m_Name: Can v1
   m_TagString: popcan
@@ -112,7 +113,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9022130298602360046}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.004, y: 0.004, z: 0.004}
   m_Children:
@@ -408,3 +409,17 @@ MonoBehaviour:
   popcanExplodeMat: {fileID: 2100000, guid: ebd0fdb18de224a4ba2aa70ab393f6d4, type: 2}
   explosion: {fileID: 6175590761723525847, guid: 6a6bbbfdee7a06a4fb5a228090e5d1dc,
     type: 3}
+--- !u!114 &8589695868388676620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022130298602360046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8a9920d43b30a44927f93ec09aee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infectedMaterial: {fileID: 2100000, guid: 3a8bcb6f8acb095469b0cc7865ac63a7, type: 2}
+  originalMaterial: {fileID: 2100000, guid: bff1371f75569e44e8c16b78264d9219, type: 2}

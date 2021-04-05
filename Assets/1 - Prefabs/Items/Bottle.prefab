@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -6207511892466673007}
   - component: {fileID: -5622773032908838394}
   - component: {fileID: 300356499342792866}
+  - component: {fileID: 235426151}
   m_Layer: 8
   m_Name: Bottle
   m_TagString: bottle
@@ -275,6 +276,20 @@ MonoBehaviour:
   initialColor: {r: 0, g: 0, b: 0, a: 0}
   dyingMat: {fileID: 0}
   initialMat: {fileID: 0}
+--- !u!114 &235426151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783823534349875583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8a9920d43b30a44927f93ec09aee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infectedMaterial: {fileID: 2100000, guid: 3a8bcb6f8acb095469b0cc7865ac63a7, type: 2}
+  originalMaterial: {fileID: 2100000, guid: dda19bf8df9facc49aa77c5d0f04de9f, type: 2}
 --- !u!1 &2790305721972017710
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4443755044167599354}
   - component: {fileID: -9011458164316284829}
   - component: {fileID: -7399447465213542188}
+  - component: {fileID: 77024490}
   m_Layer: 8
   m_Name: TinCan v1
   m_TagString: tincan
@@ -33,7 +34,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2748110077588802252}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
@@ -325,6 +326,20 @@ MonoBehaviour:
   initialColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
   initialMat: {fileID: 2100000, guid: 816d4558a81338d42816bc5efff20bd8, type: 2}
+--- !u!114 &77024490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748110077588802252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8a9920d43b30a44927f93ec09aee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infectedMaterial: {fileID: 2100000, guid: 3a8bcb6f8acb095469b0cc7865ac63a7, type: 2}
+  originalMaterial: {fileID: 2100000, guid: 816d4558a81338d42816bc5efff20bd8, type: 2}
 --- !u!1 &5486613520362301939
 GameObject:
   m_ObjectHideFlags: 0

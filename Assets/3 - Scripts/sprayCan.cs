@@ -17,7 +17,17 @@ public class sprayCan : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("Particle collided with " + other.tag);
+        if (other.layer == 10)
+        {
+            if (GameManager.gm.goodItems.Contains(other.tag) || GameManager.gm.badItems.Contains(other.tag))
+            {
+                CleanItem(other);
+            }
+            else if (other.CompareTag("jug"))
+            {
+                other.GetComponent<hazardJugBehaviour>().CleanMe();
+            }
+        }
     }
 
     private void CleanItem(GameObject objToClean)

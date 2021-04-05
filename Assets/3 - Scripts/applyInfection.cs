@@ -38,6 +38,11 @@ public class applyInfection : MonoBehaviour
 
     private void ChangeMaterial(Material mat)
     {
+        if (gameObject.CompareTag("bottle") && mat == originalMaterial)
+        {
+            //revert bottle's material uniquely
+        }
+
         foreach (MeshRenderer r in renderers)
         {
             r.material = mat;

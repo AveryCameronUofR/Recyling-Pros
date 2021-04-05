@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 454488737}
   - component: {fileID: 454488738}
   - component: {fileID: 5981166998316409244}
+  - component: {fileID: 2136744988}
   m_Layer: 8
   m_Name: apple
   m_TagString: apple
@@ -376,3 +377,17 @@ MonoBehaviour:
   initialColor: {r: 0.7264151, g: 0.6537419, b: 0.51739943, a: 1}
   dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
   initialMat: {fileID: 2100000, guid: 4046afa050657254ab954c5f352c10fc, type: 2}
+--- !u!114 &2136744988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881330803923995767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8a9920d43b30a44927f93ec09aee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infectedMaterial: {fileID: 2100000, guid: 3a8bcb6f8acb095469b0cc7865ac63a7, type: 2}
+  originalMaterial: {fileID: 2100000, guid: 4046afa050657254ab954c5f352c10fc, type: 2}

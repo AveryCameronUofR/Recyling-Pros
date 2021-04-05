@@ -17,11 +17,10 @@ public class infectItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(allList.Count.ToString());
-        //if (allList.Contains(other.gameObject.tag))
-        //{
-        //    InfectOther(other.gameObject);
-        //}
+        if (allList.Contains(other.tag))
+        {
+            InfectOther(other.gameObject);
+        }
     }
 
     private void InfectOther(GameObject objToInfect)
