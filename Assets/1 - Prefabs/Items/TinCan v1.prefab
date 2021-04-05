@@ -319,13 +319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c06fe3773f060499e399885f92172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDespawn: 3
-  secondsOfColourChange: 2
+  timeToDespawn: 5
+  secondsOfColourChange: 3
   detachChildren: 0
   dyingColor: {r: 1, g: 0, b: 0, a: 0}
   initialColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
-  initialMat: {fileID: 2100000, guid: 816d4558a81338d42816bc5efff20bd8, type: 2}
 --- !u!114 &77024490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infectedMaterial: {fileID: 2100000, guid: 3a8bcb6f8acb095469b0cc7865ac63a7, type: 2}
   originalMaterial: {fileID: 2100000, guid: 816d4558a81338d42816bc5efff20bd8, type: 2}
+  bottleLabel: {fileID: 0}
 --- !u!1 &5486613520362301939
 GameObject:
   m_ObjectHideFlags: 0

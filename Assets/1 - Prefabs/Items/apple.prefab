@@ -168,7 +168,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.3
   m_Drag: 0.8
-  m_AngularDrag: 15
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -370,13 +370,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c06fe3773f060499e399885f92172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDespawn: 3
-  secondsOfColourChange: 2
+  timeToDespawn: 5
+  secondsOfColourChange: 3
   detachChildren: 0
   dyingColor: {r: 1, g: 0, b: 0, a: 0}
   initialColor: {r: 0.7264151, g: 0.6537419, b: 0.51739943, a: 1}
   dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
-  initialMat: {fileID: 2100000, guid: 4046afa050657254ab954c5f352c10fc, type: 2}
 --- !u!114 &2136744988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,3 +390,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infectedMaterial: {fileID: 2100000, guid: 3a8bcb6f8acb095469b0cc7865ac63a7, type: 2}
   originalMaterial: {fileID: 2100000, guid: 4046afa050657254ab954c5f352c10fc, type: 2}
+  bottleLabel: {fileID: 0}

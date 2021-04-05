@@ -114,7 +114,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4602025962161850522}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e50a8a3188b9c8c4d8e5da81888462cb, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -127,7 +127,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4602025962161850522}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e50a8a3188b9c8c4d8e5da81888462cb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -140,7 +140,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4602025962161850522}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e50a8a3188b9c8c4d8e5da81888462cb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -153,7 +153,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4602025962161850522}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e50a8a3188b9c8c4d8e5da81888462cb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -166,7 +166,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4602025962161850522}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e50a8a3188b9c8c4d8e5da81888462cb, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
     actionSetPath: 
-  hideHandOnAttach: 1
+  hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 1
   handAnimationOnPickup: 0
