@@ -78,8 +78,8 @@ public class spawnTool : MonoBehaviour
                 return waveMap.num_bombs;
             case "spray":
                 return waveMap.num_spray_cans;
-            case "net":
-                return waveMap.num_nets;
+            case "fence":
+                return waveMap.num_fences;
             default:
                 return 0;
         }

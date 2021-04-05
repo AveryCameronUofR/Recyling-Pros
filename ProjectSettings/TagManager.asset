@@ -18,6 +18,8 @@ TagManager:
   - FxTemporaire
   - bottle
   - jug
+  - fence
+  - FencePlacement
   layers:
   - Default
   - TransparentFX

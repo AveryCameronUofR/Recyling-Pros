@@ -86,7 +86,7 @@ public class controllerInput : MonoBehaviour
                 bb.triggerPressed = rTriggerState;
             }
         }
-        itemAttached = hand.currentAttachedObject;
+        //itemAttached = hand.currentAttachedObject;
 
         if (itemAttached && itemAttached.CompareTag("spray"))
         {
@@ -102,6 +102,20 @@ public class controllerInput : MonoBehaviour
             }
 
             sc.TriggerState(rTriggerState);
+        }
+
+        if (itemAttached && itemAttached.CompareTag("fence"))
+        {
+            fenceTool fence = itemAttached.GetComponent<fenceTool>();
+
+            if (gameObject.GetComponent<Hand>().currentAttachedObject == null)
+            {
+                fence.inHand = false;
+            }
+            else
+            {
+                fence.inHand = true;
+            }
         }
         itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
     }
