@@ -11,16 +11,27 @@ public class GameManager : MonoBehaviour
     #region Members
     public static GameManager gm;
     public int startingLives;
+    
     public Text scoreDisplay;
     public Text waveNumberDisplay;
+
     public Text waveDescDisplay;
+    public Text waveDescDisplay_Small;
+
     public Text timerDisplayHeading;
     public Text timerDisplayTime;
+    public Text timerDisplayHeading_Small;
+    public Text timerDisplayTime_Small;
+
     public Text gameoverDisplay;
     public Text livesDisplay;
+
     public Text introDisplay;
+    public Text introDisplay_Small;
+    
     public GameObject conveyor;
     public float timeBetweenWaves;
+
     public AudioSource audioSource;
     public AudioClip endRound;
     public AudioClip startRound;
@@ -74,7 +85,7 @@ public class GameManager : MonoBehaviour
         scoreDisplay.text = "Score: " + score;
 
         playerLives = startingLives;
-        livesDisplay.text = CreateLivesString();
+        livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
 
         conveyorCntrl = conveyor.GetComponent<conveyorController>();
 
@@ -83,8 +94,16 @@ public class GameManager : MonoBehaviour
         conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
 
         waveDescDisplay.gameObject.SetActive(false);
+        waveDescDisplay_Small.gameObject.SetActive(false);
+
         timerDisplayHeading.gameObject.SetActive(false);
         timerDisplayTime.gameObject.SetActive(false);
+        timerDisplayHeading_Small.gameObject.SetActive(false);
+        timerDisplayTime_Small.gameObject.SetActive(false);
+
+        waveNumberDisplay.gameObject.SetActive(false);
+        scoreDisplay.gameObject.SetActive(false);
+        livesDisplay.gameObject.SetActive(false);
 
         currState = GameStates.Idle;
 
@@ -101,10 +120,19 @@ public class GameManager : MonoBehaviour
                 if (exitIdle)
                 {
                     currState = GameStates.Playing;
+
                     introDisplay.gameObject.SetActive(false);
+                    introDisplay_Small.gameObject.SetActive(false);
+
+                    waveNumberDisplay.gameObject.SetActive(true);
+                    scoreDisplay.gameObject.SetActive(true);
+                    livesDisplay.gameObject.SetActive(true);
+                    livesDisplay.gameObject.transform.Find("Hearts").gameObject.SetActive(true);
+
                     PlayAudio(startRound);
                 }
                 break;
+            
             case GameStates.Priming:
                 primeTime -= Time.deltaTime;
 
@@ -112,42 +140,59 @@ public class GameManager : MonoBehaviour
                 {
                     timerDisplayHeading.gameObject.SetActive(true);
                     timerDisplayTime.gameObject.SetActive(true);
+                    timerDisplayHeading_Small.gameObject.SetActive(true);
+                    timerDisplayTime_Small.gameObject.SetActive(true);
+
                     waveDescDisplay.gameObject.SetActive(false);
+                    waveDescDisplay_Small.gameObject.SetActive(false);
                 }
 
                 timerDisplayTime.text = primeTime.ToString("0.00") + "s";
+                timerDisplayTime_Small.text = timerDisplayTime.text;
 
                 if (primeTime <= 0)
                 {
                     currState = GameStates.Playing;
+
                     primeTime = timeBetweenWaves;
+
                     PlayAudio(startRound);
                 }
                 break;
+            
             case GameStates.Playing:
                 if (!waveDescDisplay.gameObject.activeSelf)
                 {
                     waveDescDisplay.gameObject.SetActive(true);
+                    waveDescDisplay_Small.gameObject.SetActive(true);
+
                     timerDisplayHeading.gameObject.SetActive(false);
                     timerDisplayTime.gameObject.SetActive(false);
+                    timerDisplayHeading_Small.gameObject.SetActive(false);
+                    timerDisplayTime_Small.gameObject.SetActive(false);
                 }
 
                 if (currWaveMap != null)
                 {
                     waveNumberDisplay.text = "Wave: " + currWaveMap.wave_id;
+
                     waveDescDisplay.text = currWaveMap.wave_name;
+                    waveDescDisplay_Small.text = waveDescDisplay.text;
                 }
                 
                 if (playerLives <= 0)
-                {
                     currState = GameStates.GameOver;
-                }
 
                 break;
+
             case GameStates.GameOver:
                 waveDescDisplay.gameObject.SetActive(false);
+                waveDescDisplay_Small.gameObject.SetActive(false);
+
                 timerDisplayHeading.gameObject.SetActive(false);
                 timerDisplayTime.gameObject.SetActive(false);
+                timerDisplayHeading_Small.gameObject.SetActive(false);
+                timerDisplayTime_Small.gameObject.SetActive(false);
 
                 gameoverDisplay.gameObject.SetActive(true);
 
@@ -222,7 +267,7 @@ public class GameManager : MonoBehaviour
     public void ItemMissed()
     {
         playerLives -= 1;
-        livesDisplay.text = CreateLivesString();
+        livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
     }
 
     #endregion
