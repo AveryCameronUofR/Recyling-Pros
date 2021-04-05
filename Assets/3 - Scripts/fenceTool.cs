@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using System.Linq;
 public class fenceTool : MonoBehaviour
 {
     public bool inHand { get; set; }
@@ -10,20 +11,28 @@ public class fenceTool : MonoBehaviour
     public int itemsToCatch = 5;
     public GameObject destorying;
     public AudioSource audioSource;
+    public GameObject[] fencePlacements;
 
     private bool placed = false;
     private bool placable = false;
-    private bool destroying = false;
     private bool soundPlayed = false;
     private GameObject fenceLoc;
     private List<GameObject> recyclingCaught = new List<GameObject>();
     void Start()
     {
         inHand = false;
+        fencePlacements = GameObject.FindGameObjectsWithTag("FencePlacement");
     }
 
     void Update()
     {
+        if (inHand)
+        {
+            AddHighlight();
+        } else
+        {
+            RemoveHighlight();
+        }
         if (placed)
         {
             timer -= Time.deltaTime;
@@ -48,7 +57,7 @@ public class fenceTool : MonoBehaviour
             Destroy(this.gameObject.GetComponent<Interactable>());
         }
     }
-    #region Placement Triggers
+    #region Placement Triggers & Highlights
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "FencePlacement" && inHand)
@@ -65,6 +74,31 @@ public class fenceTool : MonoBehaviour
         {
             Debug.Log("NotPlacable");
             placable = false;
+        }
+    }
+
+    public void AddHighlight()
+    {
+        float min = Mathf.Abs(Vector3.Distance(this.transform.position, fencePlacements[0].transform.position));
+        GameObject minObject = fencePlacements[0];
+        minObject.GetComponent<MeshRenderer>().enabled = false;
+        for (int i = 1; i < fencePlacements.Length; i++)
+        {
+            fencePlacements[i].GetComponent<MeshRenderer>().enabled = false;
+            float dist = Mathf.Abs(Vector3.Distance(this.transform.position, fencePlacements[i].transform.position));
+            if (dist < min)
+            {
+                minObject = fencePlacements[i];
+            }
+        }
+        minObject.GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    public void RemoveHighlight()
+    {
+        foreach (GameObject place in fencePlacements)
+        {
+            place.GetComponent<MeshRenderer>().enabled = false;
         }
     }
     #endregion

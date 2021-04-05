@@ -227,9 +227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
-  itemsToCatch: 5
+  itemsToCatch: 2
   destorying: {fileID: 0}
   audioSource: {fileID: 5466299448627139148}
+  fencePlacements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!82 &5466299448627139148
 AudioSource:
   m_ObjectHideFlags: 0
