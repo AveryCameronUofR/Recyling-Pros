@@ -78,7 +78,7 @@ public class spawnItems : MonoBehaviour
 
         for (int i = 1; i <= amount; i++)
         {
-            int rng = Random.Range(0, recyclables.Length - 1);
+            int rng = Random.Range(0, recyclables.Length);
             var item = recyclables.ElementAt(rng);
 
             rand_recycle.Add(item);

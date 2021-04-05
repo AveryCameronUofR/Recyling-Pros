@@ -29,36 +29,39 @@ public class raycastPointer : MonoBehaviour
         // }    
 
         RaycastHit hit;
-        if (Physics.Raycast(gameObject.transform.position, transform.TransformDirection(Vector3.forward), out hit))
-        {      
-            lineRenderer.enabled = true;
+        if (lineRenderer)
+        {
+            if (Physics.Raycast(gameObject.transform.position, transform.TransformDirection(Vector3.forward), out hit))
+            {      
+                lineRenderer.enabled = true;
 
-            var hit_obj = hit.collider.gameObject;
-            var end = hit.point;
+                var hit_obj = hit.collider.gameObject;
+                var end = hit.point;
 
-            if ((hit_obj.name).ToString().Contains("Btn"))
-            {
-                var button = hit_obj.GetComponent<Button>();
-                button.Select();
+                if ((hit_obj.name).ToString().Contains("Btn"))
+                {
+                    var button = hit_obj.GetComponent<Button>();
+                    button.Select();
+                }
+                else
+                {
+                    EventSystem.current.SetSelectedGameObject(null);
+                }
+
+                // var newBegin = new Vector3(pointerFinger.position.x, pointerFinger.position.y, pointerFinger.position.z);
+                // var newEnd = new Vector3(end.x, pointerFinger.position.y, end.z);
+
+                var newBegin = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                var newEnd = new Vector3(end.x, end.y, end.z);
+
+                lineRenderer.SetPosition(0, newBegin);
+                lineRenderer.SetPosition(1, newEnd);
             }
             else
             {
-                EventSystem.current.SetSelectedGameObject(null);
-            }
-
-            // var newBegin = new Vector3(pointerFinger.position.x, pointerFinger.position.y, pointerFinger.position.z);
-            // var newEnd = new Vector3(end.x, pointerFinger.position.y, end.z);
-
-            var newBegin = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-            var newEnd = new Vector3(end.x, end.y, end.z);
-
-            lineRenderer.SetPosition(0, newBegin);
-            lineRenderer.SetPosition(1, newEnd);
+                lineRenderer.enabled = false;
+            }    
         }
-        else
-        {
-            lineRenderer.enabled = false;
-        }    
     }
 
     public Transform GetMyFinger(Transform hand)
