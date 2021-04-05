@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public Text introDisplay;
     public GameObject conveyor;
     public float timeBetweenWaves;
+    public AudioSource audioSource;
+    public AudioClip endRound;
+    public AudioClip startRound;
 
     public WaveMap currWaveMap { get; private set; }
     public GameStates currState { get; private set; }
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
                 {
                     currState = GameStates.Playing;
                     introDisplay.gameObject.SetActive(false);
+                    PlayAudio(startRound);
                 }
                 break;
             case GameStates.Priming:
@@ -116,6 +120,7 @@ public class GameManager : MonoBehaviour
                 {
                     currState = GameStates.Playing;
                     primeTime = timeBetweenWaves;
+                    PlayAudio(startRound);
                 }
                 break;
             case GameStates.Playing:
@@ -175,6 +180,11 @@ public class GameManager : MonoBehaviour
         return livesStr;
     }
 
+    private void PlayAudio(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
     #endregion
 
     #region Public Methods
@@ -193,6 +203,7 @@ public class GameManager : MonoBehaviour
             waveIndex += 1;
             currWaveMap = waveMaps[waveIndex];
             conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
+            PlayAudio(endRound);
         }
     }
 
