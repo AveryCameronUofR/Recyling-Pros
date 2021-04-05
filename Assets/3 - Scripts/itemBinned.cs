@@ -33,6 +33,7 @@ public class itemBinned : MonoBehaviour
             {
                 GameManager.gm.IncreaseScore();
                 Destroy(col.gameObject);
+                playSound(correctItem);
             }
             else if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
             {

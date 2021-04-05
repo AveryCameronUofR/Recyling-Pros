@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/0 - Scenes/Recycling Warehouse/Recycling Warehouse.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0fd9390868263e74fb79fc714727bdaf,
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ad343a230d7c87d4184e3320028f019a,
       type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 4101a03f0d59e7445b696938a80c10d8,
       type: 2}

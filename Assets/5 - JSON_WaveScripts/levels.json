@@ -5,7 +5,7 @@
             "wave_name": "Welcome to Recycling Pros!",
             "num_recycle": 1,
             "num_contam": 2,
-            "num_bombs": 1,
+            "num_bombs": 5,
             "num_nets": 2,
             "num_spray_cans": 3,
             "conv_spd": 0.25,

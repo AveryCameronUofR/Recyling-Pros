@@ -239,6 +239,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2451366974475933872}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &93838909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93838910}
+  - component: {fileID: 93838911}
+  m_Layer: 0
+  m_Name: NetPlacement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &93838910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93838909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 1.18, z: 4.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1579685766}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &93838911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93838909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.5, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &96571297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 755707003433353991, guid: 5ca826a3d4bd9934fbdc8a07285bdd1a,
@@ -1279,7 +1323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1539,9 +1583,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 871609993}
     m_Modifications:
     - target: {fileID: 763900399, guid: 476728faa5d24224e8fe224edf946658, type: 3}
+      propertyPath: correctItem
+      value: 
+      objectReference: {fileID: 8300000, guid: a35fdce4debf20845af4db3349fd2e90, type: 3}
+    - target: {fileID: 763900399, guid: 476728faa5d24224e8fe224edf946658, type: 3}
+      propertyPath: correctTrash
+      value: 
+      objectReference: {fileID: 8300000, guid: a35fdce4debf20845af4db3349fd2e90, type: 3}
+    - target: {fileID: 763900399, guid: 476728faa5d24224e8fe224edf946658, type: 3}
       propertyPath: incorrectItem
       value: 
       objectReference: {fileID: 8300000, guid: cc72a46493eb713478be729d7e4c8094, type: 3}
+    - target: {fileID: 763900399, guid: 476728faa5d24224e8fe224edf946658, type: 3}
+      propertyPath: correctRecycling
+      value: 
+      objectReference: {fileID: 8300000, guid: f838578d1a8e7f54dbaaf38edf232394, type: 3}
     - target: {fileID: 763900399, guid: 476728faa5d24224e8fe224edf946658, type: 3}
       propertyPath: notificationSource
       value: 
@@ -2808,7 +2864,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2984,6 +3040,7 @@ Transform:
   - {fileID: 898527180}
   - {fileID: 721496459}
   - {fileID: 814047325}
+  - {fileID: 1579685766}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5160,9 +5217,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: f838578d1a8e7f54dbaaf38edf232394, type: 3}
     - target: {fileID: 763900399, guid: d494b1a66cf107f43a96251e3adf19d4, type: 3}
+      propertyPath: correctTrash
+      value: 
+      objectReference: {fileID: 8300000, guid: a35fdce4debf20845af4db3349fd2e90, type: 3}
+    - target: {fileID: 763900399, guid: d494b1a66cf107f43a96251e3adf19d4, type: 3}
       propertyPath: incorrectItem
       value: 
       objectReference: {fileID: 8300000, guid: cc72a46493eb713478be729d7e4c8094, type: 3}
+    - target: {fileID: 763900399, guid: d494b1a66cf107f43a96251e3adf19d4, type: 3}
+      propertyPath: correctRecycling
+      value: 
+      objectReference: {fileID: 8300000, guid: f838578d1a8e7f54dbaaf38edf232394, type: 3}
     - target: {fileID: 763900399, guid: d494b1a66cf107f43a96251e3adf19d4, type: 3}
       propertyPath: notificationSource
       value: 
@@ -5501,6 +5566,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576072993}
   m_CullTransparentMesh: 0
+--- !u!1 &1579685765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579685766}
+  m_Layer: 0
+  m_Name: NetColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579685766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579685765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 93838910}
+  m_Father: {fileID: 871609993}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1587570458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6193,7 +6289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1943472469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6629,7 +6725,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7108,6 +7204,16 @@ PrefabInstance:
         type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075985704569972969, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075985704569972969, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c, type: 3}

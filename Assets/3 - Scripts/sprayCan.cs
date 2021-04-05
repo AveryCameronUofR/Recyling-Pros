@@ -7,7 +7,7 @@ public class sprayCan : MonoBehaviour
     public bool inHand { get; set; }
 
     private ParticleSystem sprayParticles;
-
+    public AudioSource audioSource;
     private void Start()
     {
         sprayParticles = gameObject.GetComponent<ParticleSystem>();
@@ -30,10 +30,15 @@ public class sprayCan : MonoBehaviour
         if (inHand && triggered)
         {
             sprayParticles.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
         else
         {
             sprayParticles.Stop();
+            audioSource.Stop();
         }
     }
 }

@@ -12,6 +12,7 @@ public class controllerInput : MonoBehaviour
 
     private playerStateController pStateController;
 
+    private Hand hand;
     private string selectedHand = "right";
     private bool selectedTriggerState;
     private GameObject itemAttached;
@@ -24,6 +25,7 @@ public class controllerInput : MonoBehaviour
     void Start() 
     {
         pStateController = player.GetComponent<playerStateController>();
+        hand = gameObject.GetComponent<Hand>();
     }
 
     void Update()
@@ -58,7 +60,7 @@ public class controllerInput : MonoBehaviour
         {
             popcanBehaviour pb = itemAttached.GetComponent<popcanBehaviour>();
 
-            if (gameObject.GetComponent<Hand>().currentAttachedObject == null)
+            if (hand.currentAttachedObject == null)
             {
                 pb.inHand = false;
                 pb.ResetMaterial();
@@ -68,7 +70,23 @@ public class controllerInput : MonoBehaviour
                 pb.inHand = true;
             }
         }
-        itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
+
+        if (itemAttached && itemAttached.CompareTag("bomb"))
+        {
+            bombBehaviour bb = itemAttached.GetComponent<bombBehaviour>();
+
+            if (hand.currentAttachedObject == null)
+            {
+                bb.inHand = false;
+            }
+            else
+            {
+                bb.hand = hand;
+                bb.inHand = true;
+                bb.triggerPressed = rTriggerState;
+            }
+        }
+        itemAttached = hand.currentAttachedObject;
 
         if (itemAttached && itemAttached.CompareTag("spray"))
         {
