@@ -726,6 +726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Can v1
       objectReference: {fileID: 0}
+    - target: {fileID: 9022130298602360046, guid: ecb664c6f61662543994d2692ea8ebda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecb664c6f61662543994d2692ea8ebda, type: 3}
 --- !u!1 &366240451
@@ -1189,6 +1194,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 165063446, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: hand
+      value: left
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019281670, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: hand
+      value: right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1001 &528625940
@@ -1287,6 +1300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TinCan v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748110077588802252, guid: 194dd3ca9c857dc429c4b30d0f3f927a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3272128061426520182, guid: 194dd3ca9c857dc429c4b30d0f3f927a,
         type: 3}
@@ -1798,6 +1816,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 235426151, guid: 17d4d419848a49a46a8e68f59557784c, type: 3}
+      propertyPath: bottleLabel
+      value: 
+      objectReference: {fileID: 2100000, guid: e561d52817a86c2409933f6d893c68e2, type: 2}
     - target: {fileID: 1408143034970252229, guid: 17d4d419848a49a46a8e68f59557784c,
         type: 3}
       propertyPath: m_RootOrder
@@ -1857,6 +1879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783823534349875583, guid: 17d4d419848a49a46a8e68f59557784c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17d4d419848a49a46a8e68f59557784c, type: 3}
@@ -3397,6 +3424,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1696442064, guid: 2f3ce295c6f8ba94889dda7b132f6569, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696442069, guid: 2f3ce295c6f8ba94889dda7b132f6569, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2858482421472124020, guid: 2f3ce295c6f8ba94889dda7b132f6569,
         type: 3}
       propertyPath: m_Name
@@ -3530,6 +3565,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: apple
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881330803923995767, guid: bca127f4764156441b79c674636a7d7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca127f4764156441b79c674636a7d7f, type: 3}
@@ -6222,7 +6262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943472468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.079, y: 0.8962474, z: -1.008}
+  m_LocalPosition: {x: -0.079, y: 0.8962474, z: -1.223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7008,58 +7048,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
         type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: EmissionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
       propertyPath: CollisionModule.m_Bounce.scalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: CollisionModule.m_Dampen.scalar
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
         type: 3}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7863777604201533752, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
         type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 9075985704569972969, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9075985704569972969, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846fcbd3b326f8a4cb6e74cb0a845c7c, type: 3}

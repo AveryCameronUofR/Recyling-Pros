@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class applyInfection : MonoBehaviour
 {
     public Material infectedMaterial;
     public Material originalMaterial;
+    public Material bottleLabel;
 
     private Renderer [] renderers;
     private Material currMaterial;
@@ -40,12 +42,26 @@ public class applyInfection : MonoBehaviour
     {
         if (gameObject.CompareTag("bottle") && mat == originalMaterial)
         {
-            //revert bottle's material uniquely
+            Debug.Log("IM A JUICY BOTTLE");
+            foreach (MeshRenderer r in renderers)
+            {
+                if (r.gameObject.name == "Cylinder.001")
+                {
+                    Debug.Log("IM A LABEL");
+                    r.material = bottleLabel;
+                }
+                else
+                {
+                    r.material = originalMaterial;
+                }
+            }
         }
-
-        foreach (MeshRenderer r in renderers)
+        else
         {
-            r.material = mat;
+            foreach (MeshRenderer r in renderers)
+            {
+                r.material = mat;
+            }
         }
     }
 }

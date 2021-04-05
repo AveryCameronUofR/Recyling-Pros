@@ -17,9 +17,12 @@ public class infectItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (allList.Contains(other.tag))
+        if (allList != null)
         {
-            InfectOther(other.gameObject);
+            if (allList.Contains(other.tag))
+            {
+                InfectOther(other.gameObject);
+            }
         }
     }
 

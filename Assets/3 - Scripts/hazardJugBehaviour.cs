@@ -18,12 +18,17 @@ public class hazardJugBehaviour : MonoBehaviour
 
     public void InfectMe()
     {
+        Debug.Log("IM A DIRTY JUG");
         contaminationAura.SetActive(true);
+        contaminationAura.GetComponent<Animation>().enabled = false;
+        contaminationAura.GetComponent<Animator>().enabled = true;
     }
 
     public void CleanMe()
     {
-        contaminationAura.SetActive(false);
         Debug.Log("IM A CLEAN JUG");
+        contaminationAura.GetComponent<Animator>().enabled = false;
+        contaminationAura.GetComponent<Animation>().enabled = false;
+        contaminationAura.SetActive(false);
     }    
 }
