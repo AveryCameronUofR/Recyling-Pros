@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
+  itemsToCatch: 5
   destorying: {fileID: 0}
   audioSource: {fileID: 5466299448627139148}
 --- !u!82 &5466299448627139148

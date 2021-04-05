@@ -7,6 +7,7 @@ public class fenceTool : MonoBehaviour
 {
     public bool inHand { get; set; }
     public float timer = 10f;
+    public int itemsToCatch = 5;
     public GameObject destorying;
     public AudioSource audioSource;
 
@@ -27,15 +28,11 @@ public class fenceTool : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-        if (timer <= 0 && !destroying)
-        {
-            destroying = true;
-            DestroyNow();
-        }
-        if (timer <= 1 && !audioSource.isPlaying && !soundPlayed)
+        if ((timer <= 1 || recyclingCaught.Count >= itemsToCatch) && !audioSource.isPlaying && !soundPlayed)
         {
             audioSource.Play();
             soundPlayed = true;
+            Invoke("DestroyNow", 0.75f);
         }
         if (!placed && placable && !inHand)
         {
