@@ -21,11 +21,14 @@ public class sprayCan : MonoBehaviour
         {
             if (GameManager.gm.goodItems.Contains(other.tag) || GameManager.gm.badItems.Contains(other.tag))
             {
-                CleanItem(other);
-            }
-            else if (other.CompareTag("jug"))
-            {
-                other.GetComponent<hazardJugBehaviour>().CleanMe();
+                if (other.CompareTag("jug"))
+                {
+                    other.GetComponent<hazardJugBehaviour>().CleanMe();
+                }
+                else
+                {
+                    CleanItem(other);
+                }
             }
         }
     }
@@ -33,6 +36,7 @@ public class sprayCan : MonoBehaviour
     private void CleanItem(GameObject objToClean)
     {
         objToClean.layer = 8;
+        objToClean.GetComponent<applyInfection>().UpdateInfectionState();
     }
 
     public void TriggerState(bool triggered)

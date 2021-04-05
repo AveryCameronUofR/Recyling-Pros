@@ -10,14 +10,23 @@ public class timedObjectDestroyer : MonoBehaviour
 	public Color dyingColor;
 	public Color initialColor;
 	public Material dyingMat;
-	public Material initialMat;
-
+	
+	private Material initialMat;
 	private bool dying;
 	private float fadeAmount;
 	private float fadeDuration;
 
 	private void Start()
     {
+		if (gameObject.CompareTag("bottle"))
+        {
+			initialMat = gameObject.transform.Find("Cylinder").gameObject.GetComponent<MeshRenderer>().material;
+        }
+        else
+        {
+			initialMat = gameObject.GetComponent<MeshRenderer>().material;
+		}
+
 		if (timeToDespawn < secondsOfColourChange)
 			timeToDespawn = secondsOfColourChange;
 
@@ -75,6 +84,7 @@ public class timedObjectDestroyer : MonoBehaviour
 			r.material = new Material(initialMat);
 		}
 
+		fadeAmount = 0;
 		CancelInvoke();
     }		
 
@@ -82,6 +92,17 @@ public class timedObjectDestroyer : MonoBehaviour
     {
 		return dying;
     }
+
+	public void ChangeMyMaterialRemote(Material mat)
+    {
+		initialMat = mat;
+
+		MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer r in renderers)
+		{
+			r.material = initialMat;
+		}
+	}
 
 	private void DestroyNow()
 	{

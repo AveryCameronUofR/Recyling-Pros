@@ -30,7 +30,6 @@ public class popcanBehaviour : MonoBehaviour
     {
         if (inHand)
         {
-            // ShakeMe();
             ChangeMaterial(rb.velocity.magnitude);
             
             currDelayTime -= Time.deltaTime;
@@ -64,6 +63,17 @@ public class popcanBehaviour : MonoBehaviour
         foreach (MeshRenderer r in renderers)
         {
             r.material = new Material(initialMat);
+        }
+    }
+
+    public void ChangeMyMaterialRemote(Material mat)
+    {
+        initialMat = mat;
+
+        MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer r in renderers)
+        {
+            r.material = initialMat;
         }
     }
 

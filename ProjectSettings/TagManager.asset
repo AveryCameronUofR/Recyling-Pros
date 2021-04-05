@@ -20,6 +20,9 @@ TagManager:
   - jug
   - fence
   - FencePlacement
+  - floor
+  - teleportPoint
+  - TeleportPointCollider
   layers:
   - Default
   - TransparentFX

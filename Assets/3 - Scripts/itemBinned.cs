@@ -11,36 +11,44 @@ public class itemBinned : MonoBehaviour
     public AudioClip incorrectItem;
     void OnTriggerEnter(Collider col)
     {
-        if (gameObject.CompareTag("goodItem"))
+        if (col.gameObject.layer != 10)
         {
-            if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
+            if (gameObject.CompareTag("goodItem"))
             {
-                
-                GameManager.gm.IncreaseScore();
-                Destroy(col.gameObject);
-                playSound(correctItem);
+                if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
+                {
+
+                    GameManager.gm.IncreaseScore();
+                    Destroy(col.gameObject);
+                    playSound(correctItem);
+                }
+                else if (GameManager.gm.badItems.Contains(col.gameObject.tag))
+                {
+                    GameManager.gm.DecreaseScore();
+                    Destroy(col.gameObject);
+                    playSound(incorrectItem);
+                }
             }
-            else if (GameManager.gm.badItems.Contains(col.gameObject.tag))
+            else if (gameObject.CompareTag("badItem"))
             {
-                GameManager.gm.DecreaseScore();
-                Destroy(col.gameObject);
-                playSound(incorrectItem);
+                if (GameManager.gm.badItems.Contains(col.gameObject.tag))
+                {
+                    GameManager.gm.IncreaseScore();
+                    Destroy(col.gameObject);
+                    playSound(correctItem);
+                }
+                else if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
+                {
+                    GameManager.gm.DecreaseScore();
+                    Destroy(col.gameObject);
+                    playSound(incorrectItem);
+                }
             }
         }
-        else if (gameObject.CompareTag("badItem"))
+        else 
         {
-            if (GameManager.gm.badItems.Contains(col.gameObject.tag))
-            {
-                GameManager.gm.IncreaseScore();
-                Destroy(col.gameObject);
-                playSound(correctItem);
-            }
-            else if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
-            {
-                GameManager.gm.DecreaseScore();
-                Destroy(col.gameObject);
-                playSound(incorrectItem);
-            }
+            GameManager.gm.DecreaseScore();
+            Destroy(col.gameObject);
         }
     }
 

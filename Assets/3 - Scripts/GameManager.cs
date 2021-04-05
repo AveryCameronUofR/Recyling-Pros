@@ -24,18 +24,19 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip endRound;
     public AudioClip startRound;
+    public bool tutorialMode;
 
     public WaveMap currWaveMap { get; private set; }
     public GameStates currState { get; private set; }
 
-    public readonly List<string> goodItems = new List<string> { "popcan", "tincan", "bottle" };
+    public readonly List<string> goodItems = new List<string> { "popcan", "tincan", "bottle", "jug" };
     public readonly List<string> badItems = new List<string> { "apple" };
 
     private int score = 0;
     private int playerLives;
     private readonly string waveMapDir = System.IO.Directory.GetCurrentDirectory() + "/Assets/5 - JSON_WaveScripts/";
     private List<WaveMap> waveMaps;
-    private int waveIndex = 0;
+    public int waveIndex = 0;
     private float primeTime = 0.0f;
     private bool exitIdle = false;
     private conveyorController conveyorCntrl;
@@ -156,7 +157,8 @@ public class GameManager : MonoBehaviour
 
     private List<WaveMap> LoadWaves()
     {
-        string[] jsonWaves = System.IO.Directory.GetFiles(waveMapDir, "levels.json");
+        string filename = tutorialMode ? "tutorialLevels.json" : "levels.json";
+        string[] jsonWaves = System.IO.Directory.GetFiles(waveMapDir, filename);
 
         string json = System.IO.File.ReadAllText(jsonWaves[0]);
         Levels levels = JsonUtility.FromJson<Levels>(json);

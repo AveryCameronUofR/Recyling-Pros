@@ -18,7 +18,7 @@ public class applyInfection : MonoBehaviour
         currMaterial = originalMaterial;
     }
 
-    void Update()
+    public void UpdateInfectionState()
     {
         if (gameObject.layer == 10)
         {
@@ -26,6 +26,14 @@ public class applyInfection : MonoBehaviour
             {
                 ChangeMaterial(infectedMaterial);
                 currMaterial = infectedMaterial;
+                if (gameObject.CompareTag("popcan"))
+                {
+                    gameObject.GetComponent<popcanBehaviour>().ChangeMyMaterialRemote(currMaterial);
+                }
+                else
+                {
+                    gameObject.GetComponent<timedObjectDestroyer>().ChangeMyMaterialRemote(currMaterial);
+                }
             }
         }
         else
@@ -34,6 +42,14 @@ public class applyInfection : MonoBehaviour
             {
                 ChangeMaterial(originalMaterial);
                 currMaterial = originalMaterial;
+                if (gameObject.CompareTag("popcan"))
+                {
+                    gameObject.GetComponent<popcanBehaviour>().ChangeMyMaterialRemote(currMaterial);
+                }
+                else
+                {
+                    gameObject.GetComponent<timedObjectDestroyer>().ChangeMyMaterialRemote(currMaterial);
+                }
             }
         }
     }
@@ -42,12 +58,10 @@ public class applyInfection : MonoBehaviour
     {
         if (gameObject.CompareTag("bottle") && mat == originalMaterial)
         {
-            Debug.Log("IM A JUICY BOTTLE");
             foreach (MeshRenderer r in renderers)
             {
                 if (r.gameObject.name == "Cylinder.001")
                 {
-                    Debug.Log("IM A LABEL");
                     r.material = bottleLabel;
                 }
                 else

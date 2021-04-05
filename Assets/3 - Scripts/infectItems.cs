@@ -29,5 +29,6 @@ public class infectItems : MonoBehaviour
     private void InfectOther(GameObject objToInfect)
     {
         objToInfect.layer = 10; //change layer to infected layer
+        objToInfect.GetComponent<applyInfection>().UpdateInfectionState();
     }
 }
