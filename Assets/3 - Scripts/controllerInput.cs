@@ -92,11 +92,9 @@ public class controllerInput : MonoBehaviour
         {
             sprayCan sc = itemAttached.GetComponent<sprayCan>();
 
-            if (gameObject.GetComponent<Hand>().currentAttachedObject == null)
-            {
-                sc.inHand = false;
-            }
-            else
+            sc.inHand = false;
+
+            if (gameObject.GetComponent<Hand>().currentAttachedObject != null)
             {
                 sc.inHand = true;
             }
