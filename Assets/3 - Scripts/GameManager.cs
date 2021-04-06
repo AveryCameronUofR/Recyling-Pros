@@ -146,6 +146,9 @@ public class GameManager : MonoBehaviour
             case GameStates.Priming:
                 primeTime -= Time.deltaTime;
 
+                if (toolSpawnMaster.toolMaster.AmountOfSpawnedTools() > 0)
+                    toolSpawnMaster.toolMaster.WipeTools();
+
                 if (!timerDisplayHeading.gameObject.activeSelf)
                 {
                     timerDisplayHeading.gameObject.SetActive(true);

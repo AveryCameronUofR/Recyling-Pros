@@ -8,6 +8,7 @@ public class spawnTool : MonoBehaviour
 {
     public GameObject toolToSpawn;
     public Text toolCountDisplay;
+    //public toolSpawnMaster toolMaster;
 
     private WaveMap waveMap;
     private int numItemsForRound;
@@ -65,6 +66,9 @@ public class spawnTool : MonoBehaviour
         );
 
         GameObject spawnedTool = Instantiate(toolToSpawn, spawnLoc, toolToSpawn.transform.rotation, gameObject.transform);
+        
+        toolSpawnMaster.toolMaster.RegisterToolAsSpawned(spawnedTool);
+        
         spawnedTool.tag = toolToSpawn.gameObject.tag;
         spawnedTool.transform.parent = gameObject.transform;
 

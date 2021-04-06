@@ -45,21 +45,6 @@ public class timedObjectDestroyer : MonoBehaviour
 			ChangeMaterial();
 	}
 
-	public void ChangeColour()
-	{
-		if (fadeAmount < fadeDuration)
-		{
-			fadeAmount += Time.deltaTime * fadeDuration;
-
-			MeshRenderer [] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
-				
-			foreach (MeshRenderer r in renderers)
-			{
-				r.material.color = Color.Lerp(initialColor, dyingColor, fadeAmount);
-			}
-		}
-	}
-
 	public void ChangeMaterial()
 	{
 		if (fadeAmount < fadeDuration)
@@ -69,6 +54,9 @@ public class timedObjectDestroyer : MonoBehaviour
 			MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
 			foreach (MeshRenderer r in renderers)
 			{
+				if (r.gameObject.name == "Cylinder.001")
+					continue;
+
 				r.material.Lerp(initialMat, dyingMat, fadeAmount);
 			}
 		}
@@ -84,8 +72,8 @@ public class timedObjectDestroyer : MonoBehaviour
     {
 		dying = false;
 
-		if (!initialMat)
-			initialMat = gameObject.GetComponent<MeshRenderer>().material;
+		//if (!initialMat)
+		//	initialMat = gameObject.GetComponent<MeshRenderer>().material;
 
 		MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
 
@@ -94,13 +82,9 @@ public class timedObjectDestroyer : MonoBehaviour
 			foreach (MeshRenderer r in renderers)
 			{
 				if (r.gameObject.name == "Cylinder.001")
-				{
-					r.material = bottleCapMat;
-				}
-				else
-				{
-					r.material = initialMat;
-				}
+					continue;
+
+				r.material = initialMat;
 			}
 		}
 		else
@@ -127,6 +111,9 @@ public class timedObjectDestroyer : MonoBehaviour
 		MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
 		foreach (MeshRenderer r in renderers)
 		{
+			if (r.gameObject.name == "Cylinder.001")
+				continue;
+
 			r.material = initialMat;
 		}
 	}

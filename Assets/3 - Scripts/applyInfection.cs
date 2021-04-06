@@ -56,14 +56,12 @@ public class applyInfection : MonoBehaviour
 
     private void ChangeMaterial(Material mat)
     {
-        if (gameObject.CompareTag("bottle") && mat == originalMaterial)
+        if (gameObject.CompareTag("bottle"))
         {
             foreach (MeshRenderer r in renderers)
             {
                 if (r.gameObject.name == "Cylinder.001")
-                {
-                    r.material = bottleLabel;
-                }
+                    continue;
                 else
                 {
                     r.material = originalMaterial;

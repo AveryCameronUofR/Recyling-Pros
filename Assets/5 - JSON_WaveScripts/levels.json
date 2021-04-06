@@ -4,7 +4,7 @@
             "wave_id": 1,
             "wave_name": "Welcome to Recycling Pros! All these items should be recycled",
             "num_bombs": 0,
-            "num_fences": 2,
+            "num_fences": 0,
             "num_spray_cans": 0,
             "conv_spd": 0.1,
             "items_to_spawn": [
