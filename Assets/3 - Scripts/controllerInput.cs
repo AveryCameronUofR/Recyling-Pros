@@ -19,6 +19,7 @@ public class controllerInput : MonoBehaviour
     private bool rTriggerState;
     private bool lTriggerState;
     private bool x_ButtonState;
+    private bool pauseButtonState;
 
     private delegate void HandleItemActions();
 
@@ -116,5 +117,19 @@ public class controllerInput : MonoBehaviour
             }
         }
         itemAttached = gameObject.GetComponent<Hand>().currentAttachedObject;
+
+        pauseButtonState = SteamVR_Input.GetState("Pause", SteamVR_Input_Sources.LeftHand);
+        if (pauseButtonState == true) {
+            if (GameManager.gm.paused)
+            {
+                GameManager.gm.paused = false;
+                GameManager.gm.UnPaused();
+            }
+            else
+            {
+                GameManager.gm.paused = true;
+                GameManager.gm.Paused();
+            }
+        }
     }
 }

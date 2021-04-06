@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     public AudioClip startRound;
     public bool tutorialMode;
 
+    public AudioListener playerListener;
+    public bool paused = false;
     public WaveMap currWaveMap { get; private set; }
     public GameStates currState { get; private set; }
 
@@ -269,6 +271,19 @@ public class GameManager : MonoBehaviour
         playerLives -= 1;
         livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
     }
+
+    public void Paused()
+    {
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+    }
+
+    public void UnPaused()
+    {
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+    }
+
 
     #endregion
 }
