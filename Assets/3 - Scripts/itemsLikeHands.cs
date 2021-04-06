@@ -22,10 +22,13 @@ public class itemsLikeHands : MonoBehaviour
             if (obj != null)
             {
                 timedDestroy = obj.GetComponent<timedObjectDestroyer>();
+                
                 if (timedDestroy != null) 
                 {
                     if (timedDestroy.isDying())
+                    {
                         timedDestroy.SaveMe();
+                    }
                 }     
             }
         }

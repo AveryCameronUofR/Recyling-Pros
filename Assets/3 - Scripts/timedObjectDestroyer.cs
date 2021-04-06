@@ -12,8 +12,7 @@ public class timedObjectDestroyer : MonoBehaviour
 	public Material dyingMat;
 	
 	private Material initialMat;
-	private Material bottleCapMat;
-	private bool dying;
+	private bool dying = false;
 	private float fadeAmount;
 	private float fadeDuration;
 
@@ -21,16 +20,15 @@ public class timedObjectDestroyer : MonoBehaviour
     {
 		if (gameObject.CompareTag("bottle"))
         {
-			initialMat = gameObject.transform.Find("Cylinder").gameObject.GetComponent<MeshRenderer>().material;
-			bottleCapMat = gameObject.transform.Find("Cylinder.001").gameObject.GetComponent<MeshRenderer>().material;
+			initialMat = gameObject.transform.Find("Cylinder").gameObject.GetComponent<Renderer>().material;
 		}
 		else if (gameObject.CompareTag("apple"))
         {
-			initialMat = gameObject.transform.Find("default").gameObject.GetComponent<MeshRenderer>().material;
+			initialMat = gameObject.transform.Find("default").gameObject.GetComponent<Renderer>().material;
 		}
         else 
         {
-			initialMat = gameObject.GetComponent<MeshRenderer>().material;
+			initialMat = gameObject.GetComponent<Renderer>().material;
 		}
 
 		if (timeToDespawn < secondsOfColourChange)
@@ -47,12 +45,13 @@ public class timedObjectDestroyer : MonoBehaviour
 
 	public void ChangeMaterial()
 	{
-		if (fadeAmount < fadeDuration)
+		//Debug.Log("Lerp Material");
+		if (fadeAmount < fadeDuration && dying)
 		{
 			fadeAmount += Time.deltaTime * fadeDuration;
 
-			MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
-			foreach (MeshRenderer r in renderers)
+			Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>();
+			foreach (Renderer r in renderers)
 			{
 				if (r.gameObject.name == "Cylinder.001")
 					continue;
@@ -72,32 +71,32 @@ public class timedObjectDestroyer : MonoBehaviour
     {
 		dying = false;
 
-		//if (!initialMat)
-		//	initialMat = gameObject.GetComponent<MeshRenderer>().material;
-
-		MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+		//Renderer r1 = gameObject.GetComponent<Renderer>();
+		Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>();
 
 		if (gameObject.CompareTag("bottle"))
         {
-			foreach (MeshRenderer r in renderers)
+			foreach (Renderer r in renderers)
 			{
 				if (r.gameObject.name == "Cylinder.001")
 					continue;
 
-				r.material = initialMat;
+				r.material = new Material(initialMat);
 			}
 		}
 		else
         {
-			foreach (MeshRenderer r in renderers)
+			foreach (Renderer r in renderers)
 			{
-				r.material = initialMat;
+				r.material = new Material(initialMat);
 			}
+
+			//r1.material = new Material(initialMat);
 		}
 
 		fadeAmount = 0;
 		CancelInvoke();
-    }		
+	}		
 
 	public bool isDying()
     {
@@ -106,7 +105,7 @@ public class timedObjectDestroyer : MonoBehaviour
 
 	public void ChangeMyMaterialRemote(Material mat)
     {
-		initialMat = mat;
+		initialMat = new Material(mat);
 
 		MeshRenderer[] renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
 		foreach (MeshRenderer r in renderers)
@@ -114,7 +113,7 @@ public class timedObjectDestroyer : MonoBehaviour
 			if (r.gameObject.name == "Cylinder.001")
 				continue;
 
-			r.material = initialMat;
+			r.material = new Material(initialMat);
 		}
 	}
 

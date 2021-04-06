@@ -6,6 +6,7 @@ using System.Linq;
 public class itemsHateFloors : MonoBehaviour
 {
     private bool destroying;
+    private bool killing;
 
     void OnCollisionEnter(Collision col)
     {
@@ -22,8 +23,12 @@ public class itemsHateFloors : MonoBehaviour
             }
             else
             {
-                timedObjectDestroyer timedDestory = col.gameObject.GetComponent<timedObjectDestroyer>();
-                timedDestory.KillMe();
+                if (!killing)
+                {
+                    Debug.Log("Was I called to kill?");
+                    timedObjectDestroyer timedDestory = col.gameObject.GetComponent<timedObjectDestroyer>();
+                    StartCoroutine(KillThisThing(timedDestory, 0.25f));
+                }
             }
         }
     }
@@ -35,5 +40,13 @@ public class itemsHateFloors : MonoBehaviour
         GameManager.gm.DecreaseScore();
         Destroy(obj);
         destroying = false;
+    }
+
+    IEnumerator KillThisThing(timedObjectDestroyer script, float delay)
+    {
+        killing = true;
+        script.KillMe();
+        yield return new WaitForSeconds(delay);
+        killing = false;
     }
 }

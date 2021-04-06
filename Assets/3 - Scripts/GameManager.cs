@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         if (gm == null)
             gm = this.gameObject.GetComponent<GameManager>();
 
-        scoreDisplay.text = "Score: " + score;
+        scoreDisplay.text = "Employee Score: " + score;
 
         playerLives = startingLives;
         livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        scoreDisplay.text = "Score: " + score;
+        scoreDisplay.text = "Employee Score: " + score;
 
         switch (currState)
         {
@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
 
                 if (currWaveMap != null)
                 {
-                    waveNumberDisplay.text = "Wave: " + currWaveMap.wave_id;
+                    waveNumberDisplay.text = "Shipment: " + currWaveMap.wave_id;
 
                     waveDescDisplay.text = currWaveMap.wave_name;
                     waveDescDisplay_Small.text = waveDescDisplay.text;

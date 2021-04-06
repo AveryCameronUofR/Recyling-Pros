@@ -15,7 +15,7 @@ public class applyInfection : MonoBehaviour
     void Start()
     {
         renderers = gameObject.GetComponentsInChildren<MeshRenderer>();
-        currMaterial = originalMaterial;
+        currMaterial = new Material(originalMaterial);
     }
 
     public void UpdateInfectionState()
@@ -25,7 +25,7 @@ public class applyInfection : MonoBehaviour
             if (currMaterial != infectedMaterial)
             {
                 ChangeMaterial(infectedMaterial);
-                currMaterial = infectedMaterial;
+                currMaterial = new Material(infectedMaterial);
                 if (gameObject.CompareTag("popcan"))
                 {
                     gameObject.GetComponent<popcanBehaviour>().ChangeMyMaterialRemote(currMaterial);
@@ -41,7 +41,7 @@ public class applyInfection : MonoBehaviour
             if (currMaterial != originalMaterial)
             {
                 ChangeMaterial(originalMaterial);
-                currMaterial = originalMaterial;
+                currMaterial = new Material(originalMaterial);
                 if (gameObject.CompareTag("popcan"))
                 {
                     gameObject.GetComponent<popcanBehaviour>().ChangeMyMaterialRemote(currMaterial);
@@ -64,7 +64,7 @@ public class applyInfection : MonoBehaviour
                     continue;
                 else
                 {
-                    r.material = originalMaterial;
+                    r.material = new Material(originalMaterial);
                 }
             }
         }
@@ -72,7 +72,7 @@ public class applyInfection : MonoBehaviour
         {
             foreach (MeshRenderer r in renderers)
             {
-                r.material = mat;
+                r.material = new Material(mat);
             }
         }
     }
