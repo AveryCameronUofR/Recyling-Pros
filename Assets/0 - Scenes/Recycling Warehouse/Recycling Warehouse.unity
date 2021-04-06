@@ -4422,7 +4422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1140722417
 Transform:
   m_ObjectHideFlags: 0
@@ -4604,7 +4604,7 @@ MonoBehaviour:
   tutorialMode: 0
   playerListener: {fileID: 0}
   paused: 0
-  waveIndex: 0
+  waveIndex: 15
 --- !u!82 &1194222780
 AudioSource:
   m_ObjectHideFlags: 0

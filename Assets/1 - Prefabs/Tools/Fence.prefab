@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3263147635542223404}
   - component: {fileID: 4445885524824514526}
   - component: {fileID: 5466299448627139148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fence
   m_TagString: fence
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ MonoBehaviour:
   itemsToCatch: 7
   destorying: {fileID: 0}
   audioSource: {fileID: 5466299448627139148}
+  inStore: 1
 --- !u!82 &5466299448627139148
 AudioSource:
   m_ObjectHideFlags: 0

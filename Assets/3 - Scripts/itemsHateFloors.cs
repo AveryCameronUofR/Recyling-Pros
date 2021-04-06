@@ -25,7 +25,6 @@ public class itemsHateFloors : MonoBehaviour
             {
                 if (!killing)
                 {
-                    Debug.Log("Was I called to kill?");
                     timedObjectDestroyer timedDestory = col.gameObject.GetComponent<timedObjectDestroyer>();
                     StartCoroutine(KillThisThing(timedDestory, 0.25f));
                 }

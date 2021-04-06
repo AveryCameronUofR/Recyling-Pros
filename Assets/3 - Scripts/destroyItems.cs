@@ -2,16 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
 public class destroyItems : MonoBehaviour
 {
+    private List<string> allList;
+
+    private void Update()
+    {
+        if (allList == null)
+            allList = GameManager.gm.goodItems.Concat(GameManager.gm.badItems).ToList();
+    }
+
     void OnTriggerEnter(Collider col)
     {
-        var obj = col.gameObject.GetComponent<Valve.VR.InteractionSystem.Interactable>();
-
-        if (obj)
+        if (allList.Contains(col.gameObject.tag))
         {
             GameManager.gm.ItemMissed();
+            Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.layer == 9)
+        {
             Destroy(col.gameObject);
         }
     }
