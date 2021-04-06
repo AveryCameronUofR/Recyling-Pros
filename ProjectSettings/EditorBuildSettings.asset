@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0 - Scenes/Recycling Warehouse/Recycling Warehouse.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/0 - Scenes/Win/Win.unity
+    guid: 5ad3a8139fdf0e04c96123beb0ef0d1a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ad343a230d7c87d4184e3320028f019a,
       type: 2}

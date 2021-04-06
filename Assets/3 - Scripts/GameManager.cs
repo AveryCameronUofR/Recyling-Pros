@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR.InteractionSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     private readonly string waveMapDir = System.IO.Directory.GetCurrentDirectory() + "/Assets/5 - JSON_WaveScripts/";
     private List<WaveMap> waveMaps;
     public int waveIndex = 0;
+    private int lastWaveIndex;
     private float primeTime = 0.0f;
     private bool exitIdle = false;
     private conveyorController conveyorCntrl;
@@ -222,6 +224,7 @@ public class GameManager : MonoBehaviour
         Levels levels = JsonUtility.FromJson<Levels>(json);
 
         List<WaveMap> waveMaps = new List<WaveMap>(levels.levels);
+        lastWaveIndex = waveMaps.Count - 1;
 
         return waveMaps;
     }
@@ -258,12 +261,19 @@ public class GameManager : MonoBehaviour
     {
         if (playerLives > 0)
         {
-            currState = GameStates.Priming;
-            primeTime = timeBetweenWaves;
-            waveIndex += 1;
-            currWaveMap = waveMaps[waveIndex];
-            conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
-            PlayAudio(endRound);
+            if (waveIndex == lastWaveIndex) {
+                SceneManager.LoadScene("Win");
+            }
+            else 
+            {
+                currState = GameStates.Priming;
+                primeTime = timeBetweenWaves;
+                waveIndex += 1;
+                currWaveMap = waveMaps[waveIndex];
+                conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
+                PlayAudio(endRound);
+            }
+            
         }
     }
 
@@ -279,6 +289,11 @@ public class GameManager : MonoBehaviour
 
     public void ItemMissed()
     {
+        if (tutorialMode)
+        {
+            waveIndex -= 1;
+            currState = GameStates.Priming;
+        }
         playerLives -= 1;
         livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
     }

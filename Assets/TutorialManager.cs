@@ -2,6 +2,7 @@
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TutorialManager : MonoBehaviour
     public int trainingIndex = 0;
     public int traiingModules = 10;
     public GameObject trainingText;
+    public GameObject trainingText2;
     public float baseWaitTime = 3;
 
     public GameObject teleportArea;
@@ -23,6 +25,9 @@ public class TutorialManager : MonoBehaviour
     public GameObject shop;
 
     private Text text;
+    private Text text2;
+    private string message;
+
     private int teleportCount = 0;
     private float waitTime;
 
@@ -37,6 +42,7 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         text = trainingText.GetComponent<Text>();
+        text2 = trainingText2.GetComponent<Text>();
         waitTime = baseWaitTime;
     }
 
@@ -49,22 +55,26 @@ public class TutorialManager : MonoBehaviour
                 bool rightTurn = SteamVR_Input.GetState("SnapTurnRight", SteamVR_Input_Sources.LeftHand) || SteamVR_Input.GetState("SnapTurnRight", SteamVR_Input_Sources.RightHand);
                 if (leftTurn && !completedLeft)
                 {
-                    text.text = "Turn your head Right by pressing right on the thumb sticks";
+                    message = "Turn your head Right by pressing right on the thumb sticks";
+                    UpdateText(message);
                     completedLeft = true;
                 }
                 else if (rightTurn && !completedRight)
                 {
-                    text.text = "Turn your head Left by pressing left on the thumb sticks";
+                    message = "Turn your head Left by pressing left on the thumb sticks";
+                    UpdateText(message);
                     completedRight = true;
                 }
                 else if (completedLeft && completedRight)
                 {
-                    text.text = "Great job, now let's try movement";
+                    message = "Great job, now let's try movement";
+                    UpdateText(message);
                     trainingIndex++;
                 }
                 else if (!completedLeft && !completedRight)
                 {
-                    text.text = "Turn your head using the thumb sticks";
+                    message = "Turn your head using the thumb sticks";
+                    UpdateText(message);
                 }
                 break;
             case 1:
@@ -93,16 +103,19 @@ public class TutorialManager : MonoBehaviour
                     
                     if (teleportCount == 0)
                     {
-                        text.text = "Try Teleporting around the room by pressing the thumbstick forward";
+                        message = "Try Teleporting around the room by pressing the thumbstick forward";
+                        UpdateText(message);
                     }
-                    else if (teleportCount >= 0 && teleportCount < 2)
+                    else if (teleportCount >= 0 && teleportCount < 3)
                     {
                         
-                        text.text = "Try Teleporting " + (2 - teleportCount).ToString() + " times to get used to teleporting around the room";
+                        message = "Try Teleporting " + (3 - teleportCount).ToString() + " times to get used to teleporting around the room";
+                        UpdateText(message);
                     }
-                    else if (teleportCount == 2)
+                    else if (teleportCount == 3)
                     {
-                        text.text = "Great job, now let's try sorting recycling";
+                        message = "Great job, now let's try sorting recycling. Press the green button on the pedastal to begin once you are ready";
+                        UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
                         gameEnabled = false;
@@ -124,7 +137,8 @@ public class TutorialManager : MonoBehaviour
                     }
                     if (gm && gm.waveIndex == 2)
                     {
-                        text.text = "Great job, now let's try sorting contaminants. Press the green button on the pedastal to begin once you are ready.";
+                        message = "Great job, now let's try sorting contaminants..";
+                        UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
                         gameEnabled = false;
@@ -145,7 +159,8 @@ public class TutorialManager : MonoBehaviour
                     }
                     if (gm.waveIndex == 3)
                     {
-                        text.text = "Great job, now let's try tools";
+                        message = "Great, ready for a special item?";
+                        UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
                         gameEnabled = false;
@@ -161,12 +176,13 @@ public class TutorialManager : MonoBehaviour
                 {
                     if (!gameEnabled)
                     {
-                        SetActiveRecursively(shop, true);
+                        redBin.SetActive(true);
                         gameEnabled = true;
                     }
                     if (gm.waveIndex == 4)
                     {
-                        text.text = "Great job, now let's try a bomb";
+                        message = "Great job, now let's try tools";
+                        UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
                         gameEnabled = false;
@@ -180,11 +196,18 @@ public class TutorialManager : MonoBehaviour
             case 5:
                 if (waitTime <= 0)
                 {
+                    if (!gameEnabled)
+                    {
+                        SetActiveRecursively(shop, true);
+                        gameEnabled = true;
+                    }
                     if (gm.waveIndex == 5)
                     {
-                        text.text = "Great job, now let's try a disenfecting items";
+                        message = "Great job, now let's try a bomb";
+                        UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
+                        gameEnabled = false;
                     }
                 }
                 else
@@ -195,9 +218,10 @@ public class TutorialManager : MonoBehaviour
             case 6:
                 if (waitTime <= 0)
                 {
-                    if (gm.waveIndex == 6)
+                    if (gm.waveIndex == 5)
                     {
-                        text.text = "Great job, now let's try a disenfecting items";
+                        message = "Great job, now let's try a disenfecting items";
+                        UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
                     }
@@ -206,6 +230,38 @@ public class TutorialManager : MonoBehaviour
                 {
                     waitTime -= Time.deltaTime;
                 }
+                break;
+            case 7:
+                if (waitTime <= 0)
+                {
+                    if (gm.waveIndex == 6)
+                    {
+                        message = "Great job, now let's try a disenfecting items";
+                        UpdateText(message);
+                        trainingIndex++;
+                        waitTime = baseWaitTime;
+                    }
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
+                break;
+            case 8:
+                if (waitTime <= 0)
+                {
+                    message = "Great job, the Tutorial is complete!";
+                    UpdateText(message);
+                    trainingIndex++;
+                    waitTime = baseWaitTime;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
+                break;
+            case 9:
+                SceneManager.LoadScene("Menu");
                 break;
             default:
                 break;
@@ -216,15 +272,15 @@ public class TutorialManager : MonoBehaviour
     public static void SetActiveRecursively(GameObject rootObject, bool active)
     {
         rootObject.SetActive(active);
-        Debug.Log(rootObject.name.ToString());
-        Debug.Log(rootObject.transform.ToString());
         foreach (Transform childTransform in rootObject.transform)
         {
-            Debug.Log(childTransform.name.ToString());
-            //if (childTransform.name != rootObject.name)
-            //{
-                SetActiveRecursively(childTransform.gameObject, active);
-            //}
+            SetActiveRecursively(childTransform.gameObject, active);
         }
+    }
+
+    public void UpdateText(string textString)
+    {
+        text.text = textString;
+        text2.text = textString;
     }
 }
