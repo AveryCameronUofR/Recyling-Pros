@@ -11,16 +11,19 @@ public class fenceTool : MonoBehaviour
     public int itemsToCatch = 5;
     public GameObject destorying;
     public AudioSource audioSource;
-    public GameObject[] fencePlacements;
+    private GameObject[] fencePlacements;
 
     private bool placed = false;
+    public bool inStore = true;
     private bool placable = false;
     private bool soundPlayed = false;
+    private bool finalRemove = false;
     private GameObject fenceLoc;
     private List<GameObject> recyclingCaught = new List<GameObject>();
     void Start()
     {
         inHand = false;
+        inStore = true;
         fencePlacements = GameObject.FindGameObjectsWithTag("FencePlacement");
     }
 
@@ -29,7 +32,8 @@ public class fenceTool : MonoBehaviour
         if (inHand)
         {
             AddHighlight();
-        } else
+            inStore = false;
+        } else if (!inHand && !inStore && !finalRemove)
         {
             RemoveHighlight();
         }
@@ -55,6 +59,8 @@ public class fenceTool : MonoBehaviour
             Destroy(this.gameObject.GetComponent<InteractableHoverEvents>());
             Destroy(this.gameObject.GetComponent<Throwable>());
             Destroy(this.gameObject.GetComponent<Interactable>());
+            finalRemove = true;
+            RemoveHighlight();
         }
     }
     #region Placement Triggers & Highlights
@@ -106,7 +112,7 @@ public class fenceTool : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         //Freeze all recycling that touches the net
-        if (GameManager.gm.goodItems.Contains(collision.gameObject.tag) || GameManager.gm.badItems.Contains(collision.gameObject.tag))
+        if ((GameManager.gm.goodItems.Contains(collision.gameObject.tag) || GameManager.gm.badItems.Contains(collision.gameObject.tag)) && placed)
         {
             recyclingCaught.Add(collision.gameObject);
             collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

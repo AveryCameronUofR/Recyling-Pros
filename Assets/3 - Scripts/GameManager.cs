@@ -4,14 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
+using Valve.VR.InteractionSystem;
 
 public class GameManager : MonoBehaviour
 {
     #region Members
     public static GameManager gm;
     public int startingLives;
-    
+
+    public Player player;
+    public float playerHeight = 1.5f;
+
     public Text scoreDisplay;
     public Text waveNumberDisplay;
 

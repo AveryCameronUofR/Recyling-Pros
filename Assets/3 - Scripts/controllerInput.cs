@@ -21,6 +21,9 @@ public class controllerInput : MonoBehaviour
     private bool x_ButtonState;
     private bool pauseButtonState;
 
+    private bool initialUpdate;
+    private float initialTimer = 1.5f;
+
     private delegate void HandleItemActions();
 
     void Start() 
