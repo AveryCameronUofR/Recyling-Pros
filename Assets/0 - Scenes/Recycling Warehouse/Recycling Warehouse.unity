@@ -8113,14 +8113,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
         type: 3}
+      propertyPath: jug
+      value: 
+      objectReference: {fileID: 2858482421472124020, guid: 2f3ce295c6f8ba94889dda7b132f6569,
+        type: 3}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
+      propertyPath: popcan
+      value: 
+      objectReference: {fileID: 9022130298602360046, guid: ecb664c6f61662543994d2692ea8ebda,
+        type: 3}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
       propertyPath: recyclables.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
         type: 3}
       propertyPath: contaminants.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
+        type: 3}
+      propertyPath: recyclables.Array.data[0]
+      value: 
+      objectReference: {fileID: 1783823534349875583, guid: 17d4d419848a49a46a8e68f59557784c,
+        type: 3}
     - target: {fileID: 8107376323832649104, guid: 003e9026c21429249947c58b0259987a,
         type: 3}
       propertyPath: recyclables.Array.data[2]
@@ -8131,8 +8149,7 @@ PrefabInstance:
         type: 3}
       propertyPath: contaminants.Array.data[1]
       value: 
-      objectReference: {fileID: 2858482421472124020, guid: 2f3ce295c6f8ba94889dda7b132f6569,
-        type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 003e9026c21429249947c58b0259987a, type: 3}
 --- !u!4 &117423054188752640 stripped

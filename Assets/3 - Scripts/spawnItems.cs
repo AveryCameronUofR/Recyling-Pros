@@ -8,10 +8,13 @@ public class spawnItems : MonoBehaviour
 {
     public GameObject[] recyclables;
     public GameObject[] contaminants;
+    public GameObject popcan;
+    public GameObject jug;
 
     private WaveMap waveMap;
     private Queue<GameObject> itemQueue = new Queue<GameObject>();
-    // private bool isPlaying = false;
+    private List<float> itemDelays = new List<float>();
+
     private float currTime = 0.0f;
     private int numItemsLeft = 0;
     private int itemIndex = 0;
@@ -19,21 +22,20 @@ public class spawnItems : MonoBehaviour
 
     private void Update()
     {
-        if (currTime.Equals(null))
-            currTime = waveMap.spawn_delays[0];
-
         if (gm.currState.Equals(GameStates.Playing))
         {
             currTime -= Time.deltaTime;
+
             numItemsLeft = gameObject.transform.childCount;
 
             if (numItemsLeft == 0 && itemQueue.Count == 0)
             {
                 gm.WaveComplete();
                 itemIndex = 0;
+                return;
             }
 
-            //if currTime < 0, pop item off queue and spawn
+            // if currTime < 0, pop item off queue and spawn
             if (currTime <= 0 && itemQueue.Count != 0)
             {
                 var itemToSpawn = itemQueue.Dequeue();
@@ -41,7 +43,7 @@ public class spawnItems : MonoBehaviour
                 GameObject spawnedItem = Instantiate(itemToSpawn, gameObject.transform);
                 spawnedItem.transform.parent = gameObject.transform;
                 spawnedItem.transform.position += Vector3.left * RandomDisplacement();
-                currTime = waveMap.spawn_delays[itemIndex++];
+                currTime = itemDelays.ElementAt(++itemIndex);
             }
 
             
@@ -54,63 +56,52 @@ public class spawnItems : MonoBehaviour
             if (itemQueue.Count == 0 && waveMap != null)
             {
                 CreateItemQueue(waveMap);
+                currTime = itemDelays.ElementAt(itemIndex);
             }
         }
     }
 
     private void CreateItemQueue(WaveMap waveMap)
     {
-        var rand_recycle = GenerateRandomRecyclables(waveMap.num_recycle);
-        var rand_contam = GenerateRandomContaminants(waveMap.num_contam);
-        List<GameObject> q_items = rand_recycle.Concat(rand_contam).ToList();
+        List<Item> q_items = waveMap.items_to_spawn.ToList();
 
-        Shuffle(q_items);
-
-        foreach (GameObject item in q_items)
+        foreach (Item item in q_items)
         {
-            itemQueue.Enqueue(item);
+            GameObject objectToAdd = CreateObjectByName(item.name);
+            itemQueue.Enqueue(objectToAdd);
+            itemDelays.Add(item.delay);
+        }
+        // add one extra delay for after the last item
+        itemDelays.Add(0);
+    }
+
+    private GameObject CreateObjectByName(string name)
+    {
+        switch(name) {
+            case "contaminant":
+                return GenerateRandomContaminant();
+            case "recyclable":
+                return GenerateRandomRecyclable();
+            case "popcan":
+                return popcan;
+            case "jug":
+                return jug;
+            default:
+                Debug.Log("trying to create a " + name);
+                return null;
         }
     }
 
-    private List<GameObject> GenerateRandomRecyclables(int amount)
+    private GameObject GenerateRandomContaminant()
     {
-        List<GameObject> rand_recycle = new List<GameObject>();
-
-        for (int i = 1; i <= amount; i++)
-        {
-            int rng = Random.Range(0, recyclables.Length);
-            var item = recyclables.ElementAt(rng);
-
-            rand_recycle.Add(item);
-        }
-
-        return rand_recycle;
+        int rng = Random.Range(0, contaminants.Length);
+        return contaminants.ElementAt(rng);
     }
 
-    private List<GameObject> GenerateRandomContaminants(int amount)
+    private GameObject GenerateRandomRecyclable()
     {
-        List<GameObject> rand_contam = new List<GameObject>();
-
-        for (int i = 1; i <= amount; i++)
-        {
-            int rng = Random.Range(0, contaminants.Length - 1);
-            var item = contaminants.ElementAt(rng);
-
-            rand_contam.Add(item);
-        }
-
-        return rand_contam;
-    }
-
-    private void Shuffle<T>(IList<T> list)
-    {
-        for (int i = 0; i < list.Count; i++)
-        {
-            T tmp = list[i];
-            int rng = Random.Range(i, list.Count);
-            list[i] = list[rng];
-            list[rng] = tmp;
-        }
+        int rng = Random.Range(0, recyclables.Length);
+        return recyclables.ElementAt(rng);
     }
 
     // random displacement for items on the conveyor

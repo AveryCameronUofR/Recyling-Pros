@@ -64,17 +64,22 @@ public class GameManager : MonoBehaviour
     }
 
     [Serializable]
+    public class Item
+    {
+        public string name;
+        public float delay;
+    }
+
+    [Serializable]
     public class WaveMap
     {
         public int wave_id;
         public string wave_name;
-        public int num_recycle;
-        public int num_contam;
         public int num_bombs;
         public int num_fences;
         public int num_spray_cans;
         public float conv_spd;
-        public int[] spawn_delays;
+        public Item[] items_to_spawn;
     }
 
     #region Private Methods
