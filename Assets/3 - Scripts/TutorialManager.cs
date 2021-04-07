@@ -48,6 +48,7 @@ public class TutorialManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Training Index: " + trainingIndex);
         switch (trainingIndex)
         {
             case 0:
@@ -220,7 +221,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     if (gm.waveIndex == 5)
                     {
-                        message = "Great job, now let's try a disenfecting items";
+                        message = "Great job, now let's try disenfecting items";
                         UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
@@ -236,7 +237,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     if (gm.waveIndex == 6)
                     {
-                        message = "Great job, now let's try a disenfecting items";
+                        message = "Great job, the Tutorial is complete!";
                         UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
@@ -248,26 +249,11 @@ public class TutorialManager : MonoBehaviour
                 }
                 break;
             case 8:
-                if (waitTime <= 0)
-                {
-                    message = "Great job, the Tutorial is complete!";
-                    UpdateText(message);
-                    trainingIndex++;
-                    waitTime = baseWaitTime;
-                }
-                else
-                {
-                    waitTime -= Time.deltaTime;
-                }
-                break;
-            case 9:
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("MainMenu");
                 break;
             default:
                 break;
         }
-        Debug.Log(gm.waveIndex);
-        
     }
 
     public static void SetActiveRecursively(GameObject rootObject, bool active)

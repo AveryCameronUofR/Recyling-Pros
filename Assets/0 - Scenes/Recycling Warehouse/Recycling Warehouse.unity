@@ -3478,7 +3478,7 @@ MonoBehaviour:
   greenButtonPedestal: {fileID: 1470277932}
   playerListener: {fileID: 453267409}
   paused: 0
-  waveIndex: 2
+  waveIndex: 0
 --- !u!82 &1194222780
 AudioSource:
   m_ObjectHideFlags: 0

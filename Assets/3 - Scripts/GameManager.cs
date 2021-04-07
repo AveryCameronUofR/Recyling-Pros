@@ -243,16 +243,27 @@ public class GameManager : MonoBehaviour
     {
         //string filename = tutorialMode ? "tutorialLevels.json" : "levels.json";
         string filename = tutorialMode ? "tutorialLevels.json" : "demo_levels.json";
-        string[] jsonWaves = System.IO.Directory.GetFiles(waveMapDir, filename);
-
-        string json = System.IO.File.ReadAllText(jsonWaves[0]);
-        Levels levels = JsonUtility.FromJson<Levels>(json);
+    
+        //string[] jsonWaves = System.IO.Directory.GetFiles(waveMapDir, filename);
+        TextAsset loadedJsonFile = Resources.Load<TextAsset>(filename.Replace(".json", ""));
+        //string json = System.IO.File.ReadAllText(jsonWaves[0]);
+        Levels levels = JsonUtility.FromJson<Levels>(loadedJsonFile.text);
 
         List<WaveMap> waveMaps = new List<WaveMap>(levels.levels);
         lastWaveIndex = waveMaps.Count - 1;
 
         return waveMaps;
     }
+
+    public static string LoadResourceTextfile(string path)
+    {
+        string filePath = "SetupData/" + path.Replace(".json", "");
+
+        TextAsset targetFile = Resources.Load<TextAsset>(filePath);
+
+        return targetFile.text;
+    }
+
 
     private string CreateLivesString()
     {

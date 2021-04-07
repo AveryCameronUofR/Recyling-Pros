@@ -1,0 +1,2452 @@
+{
+    "levels": [
+        {
+            "wave_id": 1,
+            "wave_name": "Welcome to Recycling Pros! All these items should be recycled",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.2,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                }
+            ]
+        },
+        {
+            "wave_id": 2,
+            "wave_name": "Watch out for contaminants",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.2,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2.5
+                }
+            ]
+        },
+        {
+            "wave_id": 3,
+            "wave_name": "Nice work! We think you can go a bit faster",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                }
+            ]
+        },
+        {
+            "wave_id": 4,
+            "wave_name": "Looks like you're getting the hang of this",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 6
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 6
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 4
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                }
+            ]
+        },
+        {
+            "wave_id": 5,
+            "wave_name": "Be careful with those pop cans. They don’t handle well when thrown.",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 4
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 7
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 4
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 5
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 4
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 7
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "wave_id": 6,
+            "wave_name": "More sorting needed.",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 7
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 8
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "popcan",
+                    "delay": 7
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 8
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 7
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                }
+            ]
+        },
+        {
+            "wave_id": 7,
+            "wave_name": "Go check out the net on your tool bench! It can block items.",
+            "num_bombs": 0,
+            "num_fences": 1,
+            "num_spray_cans": 0,
+            "conv_spd": 0.35,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 9
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 8
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 9
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                }
+            ]
+        },
+        {
+            "wave_id": 8,
+            "wave_name": "This shipment will be trickier, use the net wisely",
+            "num_bombs": 0,
+            "num_fences": 3,
+            "num_spray_cans": 0,
+            "conv_spd": 0.35,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                }
+            ]
+        },
+        {
+            "wave_id": 9,
+            "wave_name": "Use the bomb for clusters of items, press the trigger while holding to arm!",
+            "num_bombs": 3,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.35,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 6
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 7
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 6
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 7
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 7
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                }
+            ]
+        },
+        {
+            "wave_id": 10,
+            "wave_name": "Nets and bombs are best friends",
+            "num_bombs": 5,
+            "num_fences": 3,
+            "num_spray_cans": 0,
+            "conv_spd": 0.4,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 7
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1.5
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "popcan",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 6
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 9
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.4
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 7
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 7
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 7
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                }
+            ]
+        },
+        {
+            "wave_id": 11,
+            "wave_name": "Use the spray can on your bench to deal with the hazardous item.",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 4,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                }
+            ]
+        },
+        {
+            "wave_id": 12,
+            "wave_name": "Use the spray can on your bench to deal with the hazardous item.",
+            "num_bombs": 4,
+            "num_fences": 2,
+            "num_spray_cans": 4,
+            "conv_spd": 0.4,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 4
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                }
+            ]
+        },
+        {
+            "wave_id": 13,
+            "wave_name": "We gotta get you moving here. There’s a lot more recycling on the way.",
+            "num_bombs": 3,
+            "num_fences": 2,
+            "num_spray_cans": 0,
+            "conv_spd": 0.7,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.6
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.6
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.6
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.6
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.6
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.4
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.6
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.6
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.4
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.4
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.5
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.7
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.6
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.4
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 12
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.4
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                }
+            ]
+        },
+        {
+            "wave_id": 14,
+            "wave_name": "Some items got stuck in our machinery, knocking them loose",
+            "num_bombs": 6,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.45,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 10
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.4
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.25
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "popcan",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                }
+            ]
+        },
+        {
+            "wave_id": 15,
+            "wave_name": "The shipment wasn’t as big as we thought it was. Take it easy",
+            "num_bombs": 6,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                }
+            ]
+        },
+        {
+            "wave_id": 16,
+            "wave_name": "Finish this shipment or you're fired.",
+            "num_bombs": 10,
+            "num_fences": 5,
+            "num_spray_cans": 5,
+            "conv_spd": 0.45,
+            "items_to_spawn": [
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.05
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.05
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 4
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.3
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.15
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.3
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.4
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 4
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.25
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.3
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 10
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.15
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.3
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "popcan",
+                    "delay": 10
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.15
+                }
+            ]
+        }
+    ]
+}
