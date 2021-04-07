@@ -26,7 +26,7 @@ public class destroyItems : MonoBehaviour
                 GameManager.gm.ItemMissed();
                 Destroy(col.gameObject);
                 GameManager.gm.itemsRemoved += 1;
-                destroyAudioSource.Play();
+                PlayAudio(lifeLost);
             }
 
             if (col.gameObject.layer == 9)

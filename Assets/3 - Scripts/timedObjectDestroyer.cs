@@ -11,6 +11,7 @@ public class timedObjectDestroyer : MonoBehaviour
 	public Color initialColor;
 	public Material dyingMat;
 	public AudioSource deadNotification;
+	public AudioClip dyingSound;
 	
 	private Material initialMat;
 	private bool dying = false;
@@ -126,8 +127,9 @@ public class timedObjectDestroyer : MonoBehaviour
 		}
 
 		GameManager.gm.DecreaseScore(-4);
-		// destory the game Object
-		//deadNotification.Play();
+
+		
+
 		Destroy(gameObject);
 	}
 }

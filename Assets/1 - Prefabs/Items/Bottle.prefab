@@ -258,6 +258,7 @@ MonoBehaviour:
   initialColor: {r: 0, g: 0, b: 0, a: 0}
   dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
   deadNotification: {fileID: 4114769112296619345}
+  dyingSound: {fileID: 8300000, guid: 2b4feb43314407349962d72f7624455b, type: 3}
 --- !u!114 &235426151
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -328,13 +328,13 @@ public class GameManager : MonoBehaviour
     public void Paused()
     {
         Time.timeScale = 0;
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
     }
 
     public void UnPaused()
     {
         Time.timeScale = 1;
-        AudioListener.pause = false;
+        //AudioListener.pause = false;
     }
 
     #endregion
