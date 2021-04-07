@@ -3,6 +3,7 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static GameManager;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -36,7 +37,6 @@ public class TutorialManager : MonoBehaviour
     
     private bool triedTeleporting = false;
     private Vector3 originalPosition;
-    private GameManager gm;
 
     private bool gameEnabled;
     void Start()
@@ -135,9 +135,9 @@ public class TutorialManager : MonoBehaviour
                         blueBin.SetActive(true);
                         gameEnabled = true;
                     }
-                    if (gm && gm.waveIndex == 2)
+                    if (gm.waveIndex == 1)
                     {
-                        message = "Great job, now let's try sorting contaminants..";
+                        message = "Great job, now let's try sorting contaminants.";
                         UpdateText(message);
                         trainingIndex++;
                         waitTime = baseWaitTime;
@@ -157,7 +157,7 @@ public class TutorialManager : MonoBehaviour
                         redBin.SetActive(true);
                         gameEnabled = true;
                     }
-                    if (gm.waveIndex == 3)
+                    if (gm.waveIndex == 2)
                     {
                         message = "Great, ready for a special item?";
                         UpdateText(message);
@@ -179,7 +179,7 @@ public class TutorialManager : MonoBehaviour
                         redBin.SetActive(true);
                         gameEnabled = true;
                     }
-                    if (gm.waveIndex == 4)
+                    if (gm.waveIndex == 3)
                     {
                         message = "Great job, now let's try tools";
                         UpdateText(message);
@@ -201,7 +201,7 @@ public class TutorialManager : MonoBehaviour
                         SetActiveRecursively(shop, true);
                         gameEnabled = true;
                     }
-                    if (gm.waveIndex == 5)
+                    if (gm.waveIndex == 4)
                     {
                         message = "Great job, now let's try a bomb";
                         UpdateText(message);
@@ -266,6 +266,7 @@ public class TutorialManager : MonoBehaviour
             default:
                 break;
         }
+        Debug.Log(gm.waveIndex);
         
     }
 

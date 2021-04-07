@@ -10,7 +10,7 @@
             "items_to_spawn": [
                 {
                     "name": "recyclable",
-                    "delay": 1.5
+                    "delay": 1
                 }
             ]
         },
@@ -24,7 +24,7 @@
             "items_to_spawn": [
                 {
                     "name": "contaminant",
-                    "delay": 1.5
+                    "delay": 1
                 }
             ]
         },
@@ -38,7 +38,7 @@
             "items_to_spawn": [
                 {
                     "name": "popcan",
-                    "delay": 1.5
+                    "delay": 1
                 }
             ]
         },
@@ -52,11 +52,15 @@
             "items_to_spawn": [
                 {
                     "name": "recyclable",
-                    "delay": 1
+                    "delay": 3
                 },
                 {
                     "name": "recyclable",
-                    "delay": 1
+                    "delay": 0.5
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.5
                 },
                 {
                     "name": "contaminant",
@@ -64,11 +68,7 @@
                 },
                 {
                     "name": "contaminant",
-                    "delay": 1
-                },
-                {
-                    "name": "contaminant",
-                    "delay": 1
+                    "delay": 0.5
                 }
             ]
         },

@@ -371,14 +371,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c06fe3773f060499e399885f92172e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDespawn: 5
+  timeToDespawn: 4
   secondsOfColourChange: 3
   detachChildren: 0
   dyingColor: {r: 1, g: 0, b: 0, a: 0}
   initialColor: {r: 0.7264151, g: 0.6537419, b: 0.51739943, a: 1}
   dyingMat: {fileID: 2100000, guid: 150ca68ea11d2fb46a9f5e3c78247898, type: 2}
   deadNotification: {fileID: -1824289476551688772}
-  dyingSound: {fileID: 8300000, guid: 2b4feb43314407349962d72f7624455b, type: 3}
+  dyingSound: {fileID: 8300000, guid: b96dee5dab13e6845bca3b9836209cef, type: 3}
 --- !u!114 &2136744988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2b4feb43314407349962d72f7624455b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

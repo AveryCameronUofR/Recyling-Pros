@@ -83,6 +83,7 @@ public class fenceTool : MonoBehaviour
 
     public void AddHighlight()
     {
+        /*
         float min = Mathf.Abs(Vector3.Distance(this.transform.position, fencePlacements[0].transform.position));
         GameObject minObject = fencePlacements[0];
         minObject.GetComponent<MeshRenderer>().enabled = false;
@@ -96,6 +97,11 @@ public class fenceTool : MonoBehaviour
             }
         }
         minObject.GetComponent<MeshRenderer>().enabled = true;
+        */
+        for (int i = 1; i < fencePlacements.Length; i++)
+        {
+            fencePlacements[i].GetComponent<MeshRenderer>().enabled = true;
+        }
     }
 
     public void RemoveHighlight()

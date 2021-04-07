@@ -66,6 +66,9 @@ public class timedObjectDestroyer : MonoBehaviour
 	public void KillMe()
 	{
 		dying = true;
+
+		PlayAudio(dyingSound);
+
 		Invoke("DestroyNow", timeToDespawn);
 	}
 
@@ -97,6 +100,7 @@ public class timedObjectDestroyer : MonoBehaviour
 		}
 
 		fadeAmount = 0;
+		StopAudio();
 		CancelInvoke();
 	}		
 
@@ -119,6 +123,17 @@ public class timedObjectDestroyer : MonoBehaviour
 		}
 	}
 
+	public void PlayAudio(AudioClip clip)
+    {
+		deadNotification.clip = clip;
+		deadNotification.Play();
+    }
+
+	public void StopAudio()
+    {
+		deadNotification.Stop();
+    }
+
 	private void DestroyNow()
 	{
 		if (detachChildren)
@@ -127,9 +142,6 @@ public class timedObjectDestroyer : MonoBehaviour
 		}
 
 		GameManager.gm.DecreaseScore(-4);
-
-		
-
 		Destroy(gameObject);
 	}
 }

@@ -164,19 +164,20 @@ public class GameManager : MonoBehaviour
 
                 if (toolSpawnMaster.toolMaster.AmountOfSpawnedTools() > 0)
                     toolSpawnMaster.toolMaster.WipeTools();
-
-                if (!timerDisplayHeading.gameObject.activeSelf)
+                if (!tutorialMode)
                 {
-                    timerDisplayHeading.gameObject.SetActive(true);
-                    timerDisplayTime.gameObject.SetActive(true);
-                    timerDisplayHeading_Small.gameObject.SetActive(true);
-                    timerDisplayTime_Small.gameObject.SetActive(true);
+                    if (!timerDisplayHeading.gameObject.activeSelf)
+                    {
+                        timerDisplayHeading.gameObject.SetActive(true);
+                        timerDisplayTime.gameObject.SetActive(true);
+                        timerDisplayHeading_Small.gameObject.SetActive(true);
+                        timerDisplayTime_Small.gameObject.SetActive(true);
 
-                    waveDescDisplay.gameObject.SetActive(false);
-                    waveDescDisplay_Small.gameObject.SetActive(false);
-                    itemsLeft.gameObject.SetActive(false);
+                        waveDescDisplay.gameObject.SetActive(false);
+                        waveDescDisplay_Small.gameObject.SetActive(false);
+                        itemsLeft.gameObject.SetActive(false);
+                    }
                 }
-
                 timerDisplayTime.text = primeTime.ToString("0.00") + "s";
                 timerDisplayTime_Small.text = timerDisplayTime.text;
 
