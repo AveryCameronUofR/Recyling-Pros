@@ -26,6 +26,17 @@ public class infectItems : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (allList != null)
+        {
+            if (allList.Contains(other.tag))
+            {
+                InfectOther(other.gameObject);
+            }
+        }
+    }
+
     private void InfectOther(GameObject objToInfect)
     {
         objToInfect.layer = 10; //change layer to infected layer

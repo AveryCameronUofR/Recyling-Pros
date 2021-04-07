@@ -48,7 +48,7 @@ public class spawnTool : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!itemSpawned && numItemsForRound > 0)
+        if (!itemSpawned && numItemsForRound > 0 && other.gameObject.layer == 9)
         {
             Invoke("CreateATool", 1.0f);
             itemSpawned = true;

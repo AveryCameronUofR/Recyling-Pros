@@ -68,7 +68,6 @@ public class fenceTool : MonoBehaviour
     {
         if (other.gameObject.tag == "FencePlacement" && inHand)
         {
-            Debug.Log("Placable");
             placable = true;
             fenceLoc = other.gameObject;
         } 
@@ -78,7 +77,6 @@ public class fenceTool : MonoBehaviour
     {
         if (other.gameObject.tag == "FencePlacement" && placable)
         {
-            Debug.Log("NotPlacable");
             placable = false;
         }
     }
@@ -121,7 +119,6 @@ public class fenceTool : MonoBehaviour
     #endregion
     private void DestroyNow()
     {
-        Debug.Log("DESTROYING");
         foreach (GameObject recyclingObject in recyclingCaught)
         {
             recyclingObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

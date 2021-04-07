@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using static GameManager;
 
 public class spawnItems : MonoBehaviour
@@ -10,6 +11,8 @@ public class spawnItems : MonoBehaviour
     public GameObject[] contaminants;
     public GameObject popcan;
     public GameObject jug;
+
+    public Text itemsLeft;
 
     private WaveMap waveMap;
     private Queue<GameObject> itemQueue = new Queue<GameObject>();
@@ -28,6 +31,7 @@ public class spawnItems : MonoBehaviour
             currTime -= Time.deltaTime;
 
             numItemsLeft = gameObject.transform.childCount;
+            //itemsLeft.text = "Number of Items Left: " + numItemsLeft.ToString();
 
             if (numItemsLeft == 0 && itemQueue.Count == 0)
             {
@@ -40,12 +44,12 @@ public class spawnItems : MonoBehaviour
             if (currTime <= 0 && itemQueue.Count != 0)
             {
                 var itemToSpawn = itemQueue.Dequeue();
-                itemsInWorld.Add(itemToSpawn);
-
+                
                 GameObject spawnedItem = Instantiate(itemToSpawn, gameObject.transform);
                 spawnedItem.transform.parent = gameObject.transform;
                 spawnedItem.transform.position += Vector3.left * RandomDisplacement();
                 currTime = itemDelays.ElementAt(++itemIndex);
+                itemsInWorld.Add(spawnedItem);
             }
 
             

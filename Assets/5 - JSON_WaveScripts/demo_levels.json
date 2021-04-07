@@ -1,0 +1,184 @@
+{
+    "levels": [
+        {
+            "wave_id": 1,
+            "wave_name": "Welcome to Recycling Pros! To start, lets demo recycling and contaminants",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.2,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 2
+                }
+            ]
+        },
+        {
+            "wave_id": 2,
+            "wave_name": "Now, I will demo popcans",
+            "num_bombs": 0,
+            "num_fences": 0,
+            "num_spray_cans": 0,
+            "conv_spd": 0.2,
+            "items_to_spawn": [
+                {
+                    "name": "popcan",
+                    "delay": 1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                },
+                {
+                    "name": "popcan",
+                    "delay": 2
+                }
+            ]
+        },
+        {
+            "wave_id": 3,
+            "wave_name": "Let's show off some tools, here are bombs and fences!",
+            "num_bombs": 2,
+            "num_fences": 2,
+            "num_spray_cans": 0,
+            "conv_spd": 0.2,
+            "items_to_spawn": [
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 1
+                }
+            ]
+        },
+        {
+            "wave_id": 4,
+            "wave_name": "Finally, we can show off hazardous waste and the spray can!",
+            "num_bombs": 2,
+            "num_fences": 2,
+            "num_spray_cans": 1,
+            "conv_spd": 0.3,
+            "items_to_spawn": [
+                {
+                    "name": "jug",
+                    "delay": 1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "popcan",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 5
+                },
+                {
+                    "name": "jug",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "contaminant",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                },
+                {
+                    "name": "recyclable",
+                    "delay": 0.1
+                }
+            ]
+        }
+    ]
+}

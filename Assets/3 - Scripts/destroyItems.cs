@@ -6,6 +6,9 @@ using System.Linq;
 
 public class destroyItems : MonoBehaviour
 {
+    public AudioClip lifeLost;
+    public AudioSource destroyAudioSource;
+
     private List<string> allList;
 
     private void Update()
@@ -22,6 +25,8 @@ public class destroyItems : MonoBehaviour
             {
                 GameManager.gm.ItemMissed();
                 Destroy(col.gameObject);
+                GameManager.gm.itemsRemoved += 1;
+                destroyAudioSource.Play();
             }
 
             if (col.gameObject.layer == 9)
@@ -29,5 +34,11 @@ public class destroyItems : MonoBehaviour
                 Destroy(col.gameObject);
             }
         }
+    }
+
+    private void PlayAudio(AudioClip clip)
+    {
+        destroyAudioSource.clip = clip;
+        destroyAudioSource.Play();
     }
 }

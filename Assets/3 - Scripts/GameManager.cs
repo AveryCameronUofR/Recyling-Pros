@@ -32,13 +32,16 @@ public class GameManager : MonoBehaviour
 
     public Text introDisplay;
     public Text introDisplay_Small;
-    
+
+    public Text itemsLeft;
+
     public GameObject conveyor;
     public float timeBetweenWaves;
 
     public AudioSource audioSource;
     public AudioClip endRound;
     public AudioClip startRound;
+    public AudioClip gameOver;
     public bool tutorialMode;
 
     public GameObject greenButtonPedestal;
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
     public bool paused = false;
     public WaveMap currWaveMap { get; private set; }
     public GameStates currState { get; private set; }
+    public int itemsRemoved { get; set; }
 
     public readonly List<string> goodItems = new List<string> { "popcan", "tincan", "bottle", "jug" };
     public readonly List<string> badItems = new List<string> { "apple" };
@@ -99,7 +103,7 @@ public class GameManager : MonoBehaviour
 
         scoreDisplay.text = "Employee Score: " + score;
 
-        playerLives = startingLives;
+        playerLives = 0;
         livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
 
         conveyorCntrl = conveyor.GetComponent<conveyorController>();
@@ -121,6 +125,8 @@ public class GameManager : MonoBehaviour
         waveNumberDisplay.gameObject.SetActive(false);
         scoreDisplay.gameObject.SetActive(false);
         livesDisplay.gameObject.SetActive(false);
+
+        itemsLeft.gameObject.SetActive(false);
 
         currState = GameStates.Idle;
 
@@ -154,6 +160,7 @@ public class GameManager : MonoBehaviour
             
             case GameStates.Priming:
                 primeTime -= Time.deltaTime;
+                itemsRemoved = 0;
 
                 if (toolSpawnMaster.toolMaster.AmountOfSpawnedTools() > 0)
                     toolSpawnMaster.toolMaster.WipeTools();
@@ -167,6 +174,7 @@ public class GameManager : MonoBehaviour
 
                     waveDescDisplay.gameObject.SetActive(false);
                     waveDescDisplay_Small.gameObject.SetActive(false);
+                    itemsLeft.gameObject.SetActive(false);
                 }
 
                 timerDisplayTime.text = primeTime.ToString("0.00") + "s";
@@ -183,10 +191,13 @@ public class GameManager : MonoBehaviour
                 break;
             
             case GameStates.Playing:
+                UpdateItemsLeft();
+
                 if (!waveDescDisplay.gameObject.activeSelf)
                 {
                     waveDescDisplay.gameObject.SetActive(true);
                     waveDescDisplay_Small.gameObject.SetActive(true);
+                    itemsLeft.gameObject.SetActive(true);
 
                     timerDisplayHeading.gameObject.SetActive(false);
                     timerDisplayTime.gameObject.SetActive(false);
@@ -202,14 +213,16 @@ public class GameManager : MonoBehaviour
                     waveDescDisplay_Small.text = waveDescDisplay.text;
                 }
                 
-                if (playerLives <= 0)
+                if (playerLives >= startingLives)
                     currState = GameStates.GameOver;
 
                 break;
 
             case GameStates.GameOver:
+                livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
                 waveDescDisplay.gameObject.SetActive(false);
                 waveDescDisplay_Small.gameObject.SetActive(false);
+                itemsLeft.gameObject.SetActive(false);
 
                 timerDisplayHeading.gameObject.SetActive(false);
                 timerDisplayTime.gameObject.SetActive(false);
@@ -217,6 +230,7 @@ public class GameManager : MonoBehaviour
                 timerDisplayTime_Small.gameObject.SetActive(false);
 
                 gameoverDisplay.gameObject.SetActive(true);
+                PlayAudio(gameOver);
 
                 break;
         }
@@ -224,7 +238,8 @@ public class GameManager : MonoBehaviour
 
     private List<WaveMap> LoadWaves()
     {
-        string filename = tutorialMode ? "tutorialLevels.json" : "levels.json";
+        //string filename = tutorialMode ? "tutorialLevels.json" : "levels.json";
+        string filename = tutorialMode ? "tutorialLevels.json" : "demo_levels.json";
         string[] jsonWaves = System.IO.Directory.GetFiles(waveMapDir, filename);
 
         string json = System.IO.File.ReadAllText(jsonWaves[0]);
@@ -240,7 +255,17 @@ public class GameManager : MonoBehaviour
     {
         string livesStr = "";
 
+        for (int i = 1; i <= playerLives; i++)
+        {
+            livesStr += "X ";
+        }
+
         return livesStr;
+    }
+
+    private void UpdateItemsLeft()
+    {
+        itemsLeft.text = "Number of Items Left: " + (currWaveMap.items_to_spawn.Length - itemsRemoved).ToString();
     }
 
     private void PlayAudio(AudioClip clip)
@@ -259,7 +284,7 @@ public class GameManager : MonoBehaviour
 
     public void WaveComplete()
     {
-        if (playerLives > 0)
+        if (playerLives < startingLives)
         {
             if (waveIndex == lastWaveIndex) {
                 SceneManager.LoadScene("Win");
@@ -295,7 +320,7 @@ public class GameManager : MonoBehaviour
             currState = GameStates.Priming;
         } else
         {
-            playerLives -= 1;
+            playerLives += 1;
             livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
         }
     }
@@ -308,10 +333,9 @@ public class GameManager : MonoBehaviour
 
     public void UnPaused()
     {
-        Time.timeScale = 0;
-        AudioListener.pause = true;
+        Time.timeScale = 1;
+        AudioListener.pause = false;
     }
-
 
     #endregion
 }

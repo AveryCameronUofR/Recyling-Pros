@@ -12,47 +12,53 @@ public class itemBinned : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.isTrigger)
+        //if (col.isTrigger)
+        //{
+        if (col.gameObject.layer != 10)
         {
-            if (col.gameObject.layer != 10)
+            if (gameObject.CompareTag("goodItem"))
             {
-                if (gameObject.CompareTag("goodItem"))
+                if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
                 {
-                    if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
-                    {
-                        GameManager.gm.IncreaseScore(2);
-                        Destroy(col.gameObject);
-                        playSound(correctItem);
-                    }
-                    else if (GameManager.gm.badItems.Contains(col.gameObject.tag))
-                    {
-                        GameManager.gm.DecreaseScore(-4);
-                        Destroy(col.gameObject);
-                        playSound(incorrectItem);
-                    }
+                    GameManager.gm.IncreaseScore(2);
+                    Destroy(col.gameObject);
+                    GameManager.gm.itemsRemoved += 1;
+                    playSound(correctItem);
                 }
-                else if (gameObject.CompareTag("badItem"))
+                else if (GameManager.gm.badItems.Contains(col.gameObject.tag))
                 {
-                    if (GameManager.gm.badItems.Contains(col.gameObject.tag))
-                    {
-                        GameManager.gm.IncreaseScore(2);
-                        Destroy(col.gameObject);
-                        playSound(correctItem);
-                    }
-                    else if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
-                    {
-                        GameManager.gm.DecreaseScore(-4);
-                        Destroy(col.gameObject);
-                        playSound(incorrectItem);
-                    }
+                    GameManager.gm.DecreaseScore(-4);
+                    Destroy(col.gameObject);
+                    GameManager.gm.itemsRemoved += 1;
+                    playSound(incorrectItem);
                 }
             }
-            else if (col.gameObject.layer == 10)
+            else if (gameObject.CompareTag("badItem"))
             {
-                GameManager.gm.DecreaseScore(-8);
-                Destroy(col.gameObject);
+                if (GameManager.gm.badItems.Contains(col.gameObject.tag))
+                {
+                    GameManager.gm.IncreaseScore(2);
+                    Destroy(col.gameObject);
+                    GameManager.gm.itemsRemoved += 1;
+                    playSound(correctItem);
+                }
+                else if (GameManager.gm.goodItems.Contains(col.gameObject.tag))
+                {
+                    GameManager.gm.DecreaseScore(-4);
+                    Destroy(col.gameObject);
+                    GameManager.gm.itemsRemoved += 1;
+                    playSound(incorrectItem);
+                }
             }
         }
+        else if (col.gameObject.layer == 10)
+        {
+            GameManager.gm.DecreaseScore(-8);
+            Destroy(col.gameObject);
+            GameManager.gm.itemsRemoved += 1;
+            playSound(incorrectItem);
+        }
+        //}
     }
 
     void playSound(AudioClip clip)
