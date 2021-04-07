@@ -3711,7 +3711,7 @@ MonoBehaviour:
   playerListener: {fileID: 0}
   paused: 0
   itemsExploded: 0
-  waveIndex: 5
+  waveIndex: 0
 --- !u!4 &973258919
 Transform:
   m_ObjectHideFlags: 0
@@ -8321,7 +8321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dedbba8437883ac4caf63bcb6fd8527f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingIndex: 7
+  trainingIndex: 0
   traiingModules: 10
   trainingText: {fileID: 1243294465}
   trainingText2: {fileID: 1558391048}

@@ -28,7 +28,7 @@ public class fenceTool : MonoBehaviour
         {
             fencePlacements.Add(fencePlacement);
         }
-        foreach (var fencePlacement in GameObject.FindGameObjectsWithTag("FencePlacementsAlt"))
+        foreach (var fencePlacement in GameObject.FindGameObjectsWithTag("FencePlacementAlt"))
         {
             fencePlacements.Add(fencePlacement);
         }
@@ -76,7 +76,7 @@ public class fenceTool : MonoBehaviour
     #region Placement Triggers & Highlights
     public void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.tag == "FencePlacement" || other.gameObject.tag == "fencePlacementsAlt") && inHand)
+        if ((other.gameObject.tag == "FencePlacement" || other.gameObject.tag == "fencePlacementAlt") && inHand)
         {
             placable = true;
             fenceLoc = other.gameObject;
@@ -85,7 +85,7 @@ public class fenceTool : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if ((other.gameObject.tag == "FencePlacement" || other.gameObject.tag == "fencePlacementsAlt") && placable)
+        if ((other.gameObject.tag == "FencePlacement" || other.gameObject.tag == "fencePlacementAlt") && placable)
         {
             placable = false;
         }
