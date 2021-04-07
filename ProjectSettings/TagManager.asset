@@ -23,6 +23,7 @@ TagManager:
   - floor
   - teleportPoint
   - TeleportPointCollider
+  - FencePlacementAlt
   layers:
   - Default
   - TransparentFX

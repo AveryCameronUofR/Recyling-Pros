@@ -64,6 +64,13 @@ public class spawnItems : MonoBehaviour
                 CreateItemQueue(waveMap);
                 currTime = itemDelays.ElementAt(itemIndex);
             }
+            if (gm.tutorialMode)
+            {
+                foreach (GameObject item in itemsInWorld)
+                {
+                    Destroy(item);
+                }
+            }
         }
         else if (gm.currState.Equals(GameStates.GameOver))
         {

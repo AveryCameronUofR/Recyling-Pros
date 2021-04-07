@@ -11,7 +11,7 @@ public class fenceTool : MonoBehaviour
     public int itemsToCatch = 5;
     public GameObject destorying;
     public AudioSource audioSource;
-    private GameObject[] fencePlacements;
+    private List<GameObject> fencePlacements = new List<GameObject>();
 
     private bool placed = false;
     public bool inStore = true;
@@ -24,7 +24,14 @@ public class fenceTool : MonoBehaviour
     {
         inHand = false;
         inStore = true;
-        fencePlacements = GameObject.FindGameObjectsWithTag("FencePlacement");
+        foreach(var fencePlacement in GameObject.FindGameObjectsWithTag("FencePlacement"))
+        {
+            fencePlacements.Add(fencePlacement);
+        }
+        foreach (var fencePlacement in GameObject.FindGameObjectsWithTag("FencePlacementsAlt"))
+        {
+            fencePlacements.Add(fencePlacement);
+        }
     }
 
     void Update()
@@ -53,7 +60,10 @@ public class fenceTool : MonoBehaviour
             placable = false;
             this.gameObject.transform.position = fenceLoc.transform.position;
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            transform.rotation = new Quaternion(0, 90, 0, 0);
+            if (fenceLoc.gameObject.tag == "FencePlacement")
+            {
+                transform.rotation = new Quaternion(0, 90, 0, 0);
+            }
             transform.Rotate(0, 90, 0);
             
             Destroy(this.gameObject.GetComponent<InteractableHoverEvents>());
@@ -66,7 +76,7 @@ public class fenceTool : MonoBehaviour
     #region Placement Triggers & Highlights
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "FencePlacement" && inHand)
+        if ((other.gameObject.tag == "FencePlacement" || other.gameObject.tag == "fencePlacementsAlt") && inHand)
         {
             placable = true;
             fenceLoc = other.gameObject;
@@ -75,7 +85,7 @@ public class fenceTool : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "FencePlacement" && placable)
+        if ((other.gameObject.tag == "FencePlacement" || other.gameObject.tag == "fencePlacementsAlt") && placable)
         {
             placable = false;
         }
@@ -98,7 +108,7 @@ public class fenceTool : MonoBehaviour
         }
         minObject.GetComponent<MeshRenderer>().enabled = true;
         */
-        for (int i = 1; i < fencePlacements.Length; i++)
+        for (int i = 1; i < fencePlacements.Count; i++)
         {
             fencePlacements[i].GetComponent<MeshRenderer>().enabled = true;
         }

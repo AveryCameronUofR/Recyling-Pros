@@ -5,13 +5,20 @@ using UnityEngine;
 public class explodeInRadius : MonoBehaviour
 {
     private List<Collider> itemsToExplode = new List<Collider>();
-
-    public void DestroyItems()
+    public void Start()
     {
+        
+    }
+    public void DestroyItems()
+    {      
         foreach (Collider c in itemsToExplode)
         {
             Destroy(c.gameObject);
             GameManager.gm.IncreaseScore(2);
+            if (GameManager.gm.tutorialMode)
+            {
+                GameManager.gm.itemsExploded += 1;
+            }
         }
     }
 

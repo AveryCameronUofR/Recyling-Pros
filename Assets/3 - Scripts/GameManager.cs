@@ -49,8 +49,10 @@ public class GameManager : MonoBehaviour
     public AudioListener playerListener;
     public bool paused = false;
     public WaveMap currWaveMap { get; private set; }
-    public GameStates currState { get; private set; }
+    public GameStates currState { get; set; }
     public int itemsRemoved { get; set; }
+
+    public int itemsExploded = 0;
 
     public readonly List<string> goodItems = new List<string> { "popcan", "tincan", "bottle", "jug" };
     public readonly List<string> badItems = new List<string> { "apple" };
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
     private List<WaveMap> waveMaps;
     public int waveIndex = 0;
     private int lastWaveIndex;
-    private float primeTime = 0.0f;
+    private float primeTime = 0.5f;
     private bool exitIdle = false;
     private conveyorController conveyorCntrl;
     private hideGreenBtnOnStart greenBtn;
@@ -305,7 +307,14 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseScore(int amount)
     {
-        score -= amount;
+        if (tutorialMode)
+        {
+            waveIndex -= 1;
+            WaveComplete();
+        } else
+        {
+            score -= amount;
+        }
     }
 
     public void IncreaseScore(int amount)
@@ -318,7 +327,7 @@ public class GameManager : MonoBehaviour
         if (tutorialMode)
         {
             waveIndex -= 1;
-            currState = GameStates.Priming;
+            WaveComplete();
         } else
         {
             playerLives += 1;

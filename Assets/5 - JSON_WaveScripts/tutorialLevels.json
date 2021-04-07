@@ -6,11 +6,11 @@
             "num_bombs": 0,
             "num_fences": 0,
             "num_spray_cans": 0,
-            "conv_spd": 0.1,
+            "conv_spd": 0.15,
             "items_to_spawn": [
                 {
                     "name": "recyclable",
-                    "delay": 1
+                    "delay": 0.25
                 }
             ]
         },
@@ -24,7 +24,7 @@
             "items_to_spawn": [
                 {
                     "name": "contaminant",
-                    "delay": 1
+                    "delay": 0.25
                 }
             ]
         },
@@ -38,7 +38,7 @@
             "items_to_spawn": [
                 {
                     "name": "popcan",
-                    "delay": 1
+                    "delay": 0.25
                 }
             ]
         },
@@ -48,11 +48,11 @@
             "num_bombs": 0,
             "num_fences": 3,
             "num_spray_cans": 0,
-            "conv_spd": 0.3,
+            "conv_spd": 0.2,
             "items_to_spawn": [
                 {
                     "name": "recyclable",
-                    "delay": 3
+                    "delay": 3.5
                 },
                 {
                     "name": "recyclable",
@@ -78,7 +78,7 @@
             "num_bombs": 5,
             "num_fences": 0,
             "num_spray_cans": 0,
-            "conv_spd": 0.3,
+            "conv_spd": 0.2,
             "items_to_spawn": [
                 {
                     "name": "contaminant",
@@ -98,11 +98,11 @@
                 },
                 {
                     "name": "contaminant",
-                    "delay": 6
+                    "delay": 1
                 },
                 {
                     "name": "recyclable",
-                    "delay": 0.1
+                    "delay": 0.5
                 }
             ]
         },
@@ -112,11 +112,11 @@
             "num_bombs": 0,
             "num_fences": 0,
             "num_spray_cans": 4,
-            "conv_spd": 0.3,
+            "conv_spd": 0.15,
             "items_to_spawn": [
                 {
                     "name": "contaminant",
-                    "delay": 10
+                    "delay": 3
                 },
                 {
                     "name": "recyclable",
