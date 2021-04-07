@@ -11,7 +11,7 @@ public class explodeInRadius : MonoBehaviour
         foreach (Collider c in itemsToExplode)
         {
             Destroy(c.gameObject);
-            GameManager.gm.IncreaseScore();
+            GameManager.gm.IncreaseScore(2);
         }
     }
 

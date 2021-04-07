@@ -14,6 +14,7 @@ public class spawnItems : MonoBehaviour
     private WaveMap waveMap;
     private Queue<GameObject> itemQueue = new Queue<GameObject>();
     private List<float> itemDelays = new List<float>();
+    private List<GameObject> itemsInWorld = new List<GameObject>();
 
     private float currTime = 0.0f;
     private int numItemsLeft = 0;
@@ -39,6 +40,7 @@ public class spawnItems : MonoBehaviour
             if (currTime <= 0 && itemQueue.Count != 0)
             {
                 var itemToSpawn = itemQueue.Dequeue();
+                itemsInWorld.Add(itemToSpawn);
 
                 GameObject spawnedItem = Instantiate(itemToSpawn, gameObject.transform);
                 spawnedItem.transform.parent = gameObject.transform;
@@ -57,6 +59,13 @@ public class spawnItems : MonoBehaviour
             {
                 CreateItemQueue(waveMap);
                 currTime = itemDelays.ElementAt(itemIndex);
+            }
+        }
+        else if (gm.currState.Equals(GameStates.GameOver))
+        {
+            foreach (GameObject item in itemsInWorld)
+            {
+                Destroy(item);
             }
         }
     }

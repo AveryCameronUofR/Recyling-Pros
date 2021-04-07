@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public AudioClip startRound;
     public bool tutorialMode;
 
+    public GameObject greenButtonPedestal;
+
     public AudioListener playerListener;
     public bool paused = false;
     public WaveMap currWaveMap { get; private set; }
@@ -58,7 +60,8 @@ public class GameManager : MonoBehaviour
     private float primeTime = 0.0f;
     private bool exitIdle = false;
     private conveyorController conveyorCntrl;
-    private string heart_symbol = "\u2764";
+    private hideGreenBtnOnStart greenBtn;
+    //private string heart_symbol = "\u2764";
 
     public enum GameStates { Idle, Priming, Playing, GameOver };
     #endregion
@@ -101,6 +104,8 @@ public class GameManager : MonoBehaviour
 
         conveyorCntrl = conveyor.GetComponent<conveyorController>();
 
+        greenBtn = greenButtonPedestal.GetComponent<hideGreenBtnOnStart>();
+
         waveMaps = LoadWaves();
         currWaveMap = waveMaps[waveIndex];
         conveyorCntrl.UpdateSpeed(currWaveMap.conv_spd);
@@ -132,6 +137,8 @@ public class GameManager : MonoBehaviour
                 if (exitIdle)
                 {
                     currState = GameStates.Playing;
+
+                    greenBtn.HideGreenBtn();
 
                     introDisplay.gameObject.SetActive(false);
                     introDisplay_Small.gameObject.SetActive(false);
@@ -233,13 +240,6 @@ public class GameManager : MonoBehaviour
     {
         string livesStr = "";
 
-        if (playerLives <= 0)
-            return livesStr;
-
-        for (int i = 0; i < playerLives; i++)
-            livesStr += heart_symbol + " ";
-
-        livesStr.Remove(livesStr.Length - 1);
         return livesStr;
     }
 
@@ -277,14 +277,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DecreaseScore()
+    public void DecreaseScore(int amount)
     {
-        score -= 4;
+        score -= amount;
     }
 
-    public void IncreaseScore()
+    public void IncreaseScore(int amount)
     {
-        score += 2;
+        score += amount;
     }
 
     public void ItemMissed()
@@ -293,9 +293,11 @@ public class GameManager : MonoBehaviour
         {
             waveIndex -= 1;
             currState = GameStates.Priming;
+        } else
+        {
+            playerLives -= 1;
+            livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
         }
-        playerLives -= 1;
-        livesDisplay.gameObject.transform.Find("Hearts").gameObject.GetComponent<Text>().text = CreateLivesString();
     }
 
     public void Paused()

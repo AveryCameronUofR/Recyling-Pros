@@ -124,7 +124,7 @@ public class timedObjectDestroyer : MonoBehaviour
 			transform.DetachChildren();
 		}
 
-		GameManager.gm.DecreaseScore();
+		GameManager.gm.DecreaseScore(-4);
 		// destory the game Object
 		Destroy(gameObject);
 	}

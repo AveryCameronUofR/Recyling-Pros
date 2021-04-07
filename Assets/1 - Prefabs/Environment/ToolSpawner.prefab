@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2705598, y: 0.16619444, z: 0.20803928}
-  m_Center: {x: -0.29003072, y: -0.41690278, z: -0.28597474}
+  m_Size: {x: 0.21972442, y: 0.051071286, z: 0.18959641}
+  m_Center: {x: -0.28132355, y: -0.44546646, z: -0.2761997}
 --- !u!114 &2889866811064812839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,4 +59,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolToSpawn: {fileID: 4233887529536929065, guid: 7ec83637002ec0b4892f19242e104afd,
     type: 3}
-  store: {fileID: 0}
+  toolCountDisplay: {fileID: 0}

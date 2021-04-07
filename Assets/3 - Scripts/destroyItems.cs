@@ -16,15 +16,18 @@ public class destroyItems : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (allList.Contains(col.gameObject.tag))
+        if (allList != null)
         {
-            GameManager.gm.ItemMissed();
-            Destroy(col.gameObject);
-        }
+            if (allList.Contains(col.gameObject.tag))
+            {
+                GameManager.gm.ItemMissed();
+                Destroy(col.gameObject);
+            }
 
-        if (col.gameObject.layer == 9)
-        {
-            Destroy(col.gameObject);
+            if (col.gameObject.layer == 9)
+            {
+                Destroy(col.gameObject);
+            }
         }
     }
 }

@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: -8047526394973574901}
   - component: {fileID: 8211296207654916146}
   - component: {fileID: 2815759335345602351}
+  - component: {fileID: 2496887639314174915}
   - component: {fileID: 6779631063432493257}
   - component: {fileID: 8545675236966213252}
   - component: {fileID: 4944325907058636770}
@@ -189,6 +190,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -17.5, y: -33, z: -16.7}
   m_Center: {x: 0, y: 7.44, z: 0}
+--- !u!136 &2496887639314174915
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022130298602360046}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 16.918215
+  m_Height: 46.10685
+  m_Direction: 1
+  m_Center: {x: 0, y: 7, z: 0}
 --- !u!114 &6779631063432493257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33970a635edbbf941882793b38b1b90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 3.1
+  maxVelocity: 2.9
   safetyDelay: 0.5
   shakeSpeed: 0.2
   initialMat: {fileID: 2100000, guid: bff1371f75569e44e8c16b78264d9219, type: 2}

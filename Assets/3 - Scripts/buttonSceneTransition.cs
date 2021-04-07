@@ -16,5 +16,7 @@ public class buttonSceneTransition : MonoBehaviour
             SceneManager.LoadScene("Recycling Warehouse");
         if (text.text == "RETURN TO MENU")
             SceneManager.LoadScene("MainMenu");
+        if (text.text == "TUTORIAL")
+            SceneManager.LoadScene("Tutorial");
     }
 }

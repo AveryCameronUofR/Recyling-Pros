@@ -6,7 +6,7 @@
             "num_bombs": 0,
             "num_fences": 0,
             "num_spray_cans": 0,
-            "conv_spd": 0.1,
+            "conv_spd": 0.2,
             "items_to_spawn": [
                 {
                     "name": "recyclable",
@@ -48,7 +48,7 @@
             "num_bombs": 0,
             "num_fences": 0,
             "num_spray_cans": 0,
-            "conv_spd": 0.15,
+            "conv_spd": 0.2,
             "items_to_spawn": [
                 {
                     "name": "recyclable",

@@ -36,7 +36,7 @@ public class itemsHateFloors : MonoBehaviour
     {
         destroying = true;
         yield return new WaitForSeconds(delay);
-        GameManager.gm.DecreaseScore();
+        GameManager.gm.DecreaseScore(-4);
         Destroy(obj);
         destroying = false;
     }

@@ -17,12 +17,12 @@ GameObject:
   - component: {fileID: 8962108931219593487}
   - component: {fileID: 7362667647727818959}
   - component: {fileID: 7237240986447903630}
-  - component: {fileID: 763900399}
   - component: {fileID: -3478099318481751418}
   - component: {fileID: -8886434605013220943}
   - component: {fileID: 8868512286736263475}
   - component: {fileID: 5283965651084559242}
   - component: {fileID: 1346712273283849621}
+  - component: {fileID: -398669119574481522}
   m_Layer: 0
   m_Name: RedItemBin
   m_TagString: badItem
@@ -172,21 +172,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07431515, y: 1.173587, z: 0.61726475}
   m_Center: {x: -0.28021178, y: 0.58679336, z: 0.014233103}
---- !u!114 &763900399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4602025962161850522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9eb69e834f7014e8d13b534675c30c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationSource: {fileID: 0}
-  correctItem: {fileID: 0}
-  incorrectItem: {fileID: 0}
 --- !u!114 &-3478099318481751418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,3 +330,18 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &-398669119574481522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4602025962161850522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9eb69e834f7014e8d13b534675c30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationSource: {fileID: 0}
+  correctItem: {fileID: 0}
+  incorrectItem: {fileID: 0}
