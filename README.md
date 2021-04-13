@@ -1,6 +1,8 @@
 # Recyling-Pros
  CS 458 VR Recylcing Sorting Simulator
+ 
 Recycling Pros is a VR recycling sorting simulator, it features wave based levels, special items and tools with special abilities. 
+A video of the game demo being played is available [here](https://www.youtube.com/watch?v=tOMVE_pq-ps)
 
 The game is built using SteamVR in Unity with some custom assets, and free assets and music.
 
